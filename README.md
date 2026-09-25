@@ -18,6 +18,11 @@ gilvero-admin (this repo)  ──writes──►  Supabase  ◄──reads──
 | Images   | Supabase Storage, public `media` bucket (writes are admin-only) |
 | Auth     | Supabase email + password, session refreshed in `src/proxy.ts` |
 
+## Requirements
+
+- **Node.js 22+** (`.nvmrc` provided). Supabase's JS client needs Node 22's built-in WebSocket;
+  on Node 20 sign-in and the scripts crash with "native WebSocket not found".
+
 ## First-time setup
 
 1. **Create a Supabase project**, then copy `.env.example` to `.env.local` and fill in the values:
@@ -31,14 +36,16 @@ gilvero-admin (this repo)  ──writes──►  Supabase  ◄──reads──
    npm run db:migrate                     # tables, RLS policies, storage bucket
    npm run db:seed                        # everything the live site shows today + its 8 images
    npm run admin:create -- --email you@gilvero.com --password "a-long-password" --name "Your Name"
+   npm run db:check                       # live project: public reads work, writes/uploads blocked
    npm run dev                            # http://localhost:3001
    ```
 
-3. **Website (Vercel → gilvero project → Environment Variables):** add `NEXT_PUBLIC_SUPABASE_URL`,
-   `NEXT_PUBLIC_SUPABASE_ANON_KEY` and `REVALIDATE_SECRET`. `REVALIDATE_SECRET` must be the same
-   value as `WEBSITE_REVALIDATE_SECRET` here. Then redeploy.
+3. **Website (hosted on Netlify → Site configuration → Environment variables):** add
+   `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` and `REVALIDATE_SECRET`.
+   `REVALIDATE_SECRET` must be the same value as `WEBSITE_REVALIDATE_SECRET` here. Then trigger a
+   deploy, and make sure the site builds from the `main` branch of `gilverostudio/gilvero`.
 
-4. **Admin on Vercel:** import this repo as a new project, e.g. on `admin.gilvero.com`, and add
+4. **Admin hosting (Netlify or Vercel):** import this repo as a new site, e.g. on `admin.gilvero.com`, and add
    `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_WEBSITE_URL` and
    `WEBSITE_REVALIDATE_SECRET`. **Don't** add the service-role key or the DB URL; only the local
    scripts use those.

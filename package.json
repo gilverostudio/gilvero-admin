@@ -12,7 +12,8 @@
     "db:migrate": "tsx --env-file=.env.local scripts/migrate.ts",
     "db:seed": "tsx --env-file=.env.local scripts/seed.ts",
     "db:verify": "tsx scripts/verify.ts",
-    "admin:create": "tsx --env-file=.env.local scripts/create-admin.ts"
+    "admin:create": "tsx --env-file=.env.local scripts/create-admin.ts",
+    "db:check": "tsx --env-file=.env.local scripts/check-live.ts"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.23",
@@ -44,5 +45,8 @@
     "tailwindcss": "^4.3.3",
     "tsx": "^4.23.15",
     "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

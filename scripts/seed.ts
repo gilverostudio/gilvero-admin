@@ -9,9 +9,9 @@
  */
 import { readFileSync } from "node:fs";
 
-import { createClient } from "@supabase/supabase-js";
 import postgres from "postgres";
 
+import { createAdminClient } from "./lib/supabase-admin";
 import { buildSeedPlan, CONTENT_TABLES } from "./seed/build";
 import { insertAll } from "./seed/sql";
 
@@ -19,18 +19,14 @@ const BUCKET = "media";
 
 async function main() {
   const reset = process.argv.includes("--reset");
-  const { SUPABASE_DB_URL, NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY } = process.env;
-  if (!SUPABASE_DB_URL || !NEXT_PUBLIC_SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
-    throw new Error("SUPABASE_DB_URL, NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set");
-  }
+  const { SUPABASE_DB_URL } = process.env;
+  if (!SUPABASE_DB_URL) throw new Error("SUPABASE_DB_URL must be set in .env.local");
 
   // Build (and validate) the whole plan before touching anything remote.
   const plan = buildSeedPlan("supabase/seed");
 
   const sql = postgres(SUPABASE_DB_URL, { max: 1, onnotice: () => {} });
-  const supabase = createClient(NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
-    auth: { persistSession: false },
-  });
+  const supabase = createAdminClient();
 
   try {
     const [{ count }] = await sql`select count(*)::int as count from site_settings`;

@@ -6,7 +6,7 @@
  * If the email already exists in Supabase Auth, the password is updated and the
  * user is (re)linked to admin_users. The first admin should be an `owner`.
  */
-import { createClient } from "@supabase/supabase-js";
+import { createAdminClient } from "./lib/supabase-admin";
 
 function arg(name: string) {
   const index = process.argv.indexOf(`--${name}`);
@@ -23,13 +23,7 @@ async function main() {
   if (password.length < 10) throw new Error("Use a password of at least 10 characters.");
   if (!["owner", "editor"].includes(role)) throw new Error("--role must be owner or editor");
 
-  const { NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY } = process.env;
-  if (!NEXT_PUBLIC_SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
-    throw new Error("NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set in .env.local");
-  }
-  const supabase = createClient(NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
-    auth: { persistSession: false },
-  });
+  const supabase = createAdminClient();
 
   // Find an existing auth user with this email.
   let userId: string | undefined;
