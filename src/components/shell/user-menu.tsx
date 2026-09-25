@@ -1,7 +1,8 @@
 "use client";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { ChevronDown, LogOut } from "lucide-react";
+import { ChevronDown, LoaderCircle, LogOut } from "lucide-react";
+import { useTransition } from "react";
 
 import { signOut } from "@/app/login/actions";
 import type { AdminUser } from "@/lib/auth";
@@ -17,6 +18,8 @@ function initials(admin: AdminUser) {
 }
 
 export function UserMenu({ admin }: { admin: AdminUser }) {
+  const [signingOut, startSignOut] = useTransition();
+
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className="group flex cursor-pointer items-center gap-2.5 rounded-full border border-border/70 py-1 pr-3 pl-1 transition-colors hover:border-primary/50 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none">
@@ -40,17 +43,15 @@ export function UserMenu({ admin }: { admin: AdminUser }) {
             <p className="eyebrow mt-2 !text-[0.6rem]">{admin.role}</p>
           </div>
           <DropdownMenu.Separator className="my-1 h-px bg-border/70" />
-          <form action={signOut}>
-            <DropdownMenu.Item asChild>
-              <button
-                type="submit"
-                className="flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-foreground/80 outline-none data-[highlighted]:bg-secondary data-[highlighted]:text-foreground"
-              >
-                <LogOut className="size-4" />
-                Sign out
-              </button>
-            </DropdownMenu.Item>
-          </form>
+          {/* Called directly: a <form> inside the menu is unmounted before it can submit. */}
+          <DropdownMenu.Item
+            onSelect={() => startSignOut(() => signOut())}
+            disabled={signingOut}
+            className="flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-foreground/80 outline-none data-[highlighted]:bg-secondary data-[highlighted]:text-foreground"
+          >
+            {signingOut ? <LoaderCircle className="size-4 animate-spin" /> : <LogOut className="size-4" />}
+            Sign out
+          </DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>

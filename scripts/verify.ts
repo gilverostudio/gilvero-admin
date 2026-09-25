@@ -182,6 +182,43 @@ async function main() {
     `missing: ${JSON.stringify(missingText.slice(0, 10))}`,
   );
 
+  console.log("\n3b. Phase 1 helpers");
+  const usage = await one<{ count: number }>(
+    `select count(*)::int as count from media_usage u join media m on m.id = u.media_id where m.legacy_key = 'studio'`,
+  );
+  check(`media_usage finds every use of the studio image (${usage!.count})`, usage!.count > 10);
+  const order = (await db.query<{ id: string }>(`select id from portfolio_categories order by sort_order`)).rows.map(
+    (r) => r.id,
+  );
+  await db.query(`select reorder_rows('portfolio_categories', 'sort_order', $1::uuid[])`, [[...order].reverse()]);
+  const reordered = (
+    await db.query<{ id: string }>(`select id from portfolio_categories order by sort_order`)
+  ).rows.map((r) => r.id);
+  check("reorder_rows reverses category order", same(reordered, [...order].reverse()));
+  await db.query(`select reorder_rows('portfolio_categories', 'sort_order', $1::uuid[])`, [order]);
+  check(
+    "reorder_rows rejects non-whitelisted tables",
+    await db.query(`select reorder_rows('admin_users', 'role', '{}'::uuid[])`).then(
+      () => false,
+      () => true,
+    ),
+  );
+  const proj = await one<{ id: string }>(`select id from projects where slug = 'aurum-timepieces'`);
+  const heroMedia = await one<{ id: string }>(`select id from media where legacy_key = 'hero'`);
+  await db.query(`select set_project_gallery($1, $2::jsonb)`, [
+    proj!.id,
+    JSON.stringify([
+      { media_id: heroMedia!.id, caption: "A" },
+      { media_id: heroMedia!.id, caption: "B" },
+    ]),
+  ]);
+  const gal = (
+    await db.query<{ caption: string }>(`select caption from project_images where project_id = $1 order by sort_order`, [
+      proj!.id,
+    ])
+  ).rows;
+  check("set_project_gallery replaces the gallery in order", same(gal.map((g) => g.caption), ["A", "B"]));
+
   console.log("\n4. Row Level Security");
   const asRole = async (role: "anon" | "authenticated", userId: string | null, fn: () => Promise<void>) => {
     await db.exec(`set role ${role}`);
@@ -210,7 +247,7 @@ async function main() {
     const { count } = (await one<{ count: number }>(`select count(*)::int as count from projects`))!;
     check("visitor sees published projects only", count === 5, `saw ${count}`);
     const imgs = (await one<{ count: number }>(`select count(*)::int as count from project_images`))!;
-    check("visitor cannot see a draft project's gallery", imgs.count === 25, `saw ${imgs.count}`);
+    check("visitor cannot see a draft project's gallery", imgs.count === 22, `saw ${imgs.count}`);
     const subs = (await one<{ count: number }>(`select count(*)::int as count from submissions`))!;
     check("visitor cannot read the inbox", subs.count === 0);
     check("visitor cannot write content", await fails(`insert into faqs (topic, question, answer) values ('x','y','z')`));

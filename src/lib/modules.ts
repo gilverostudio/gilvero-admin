@@ -16,6 +16,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+/** Editors up to and including this phase are built. */
+export const BUILT_PHASE = 1;
+
+export const isBuilt = (module: Pick<AdminModule, "phase">) => module.phase <= BUILT_PHASE;
+
 export type AdminModule = {
   slug: string;
   label: string;

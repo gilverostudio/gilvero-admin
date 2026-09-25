@@ -80,6 +80,28 @@ that all 812 text values from the site are in the database, compares projects, c
 FAQ, settings, legal text and menus with the website, and tests the RLS rules as a visitor, a
 signed-in non-admin and an admin.
 
+## Editors
+
+### Media Library (`/media`)
+Drag-and-drop uploads go straight from the browser to Supabase Storage (up to 25 MB each).
+For each image you can set alt text and a **focal point**, which the website uses as
+`object-position` so crops keep the subject in frame. The library shows everywhere an image is
+used (the `media_usage` view), and an image can't be deleted while it's still in use.
+
+### Portfolio (`/portfolio`)
+- **Projects:** drag to set the website order, and publish/unpublish or star (feature on the
+  homepage) straight from the list. The "On the homepage" panel sets the order of
+  "Recent commissions".
+- **Project editor:** details, URL slug, category, services, story → challenge → solution →
+  result, cover, a sortable gallery with captions, an optional testimonial, and SEO with a
+  search-result preview. Publishing is blocked until the project has a cover.
+- **Categories:** add, rename, reorder and hide (hidden categories keep their projects but show
+  no filter button). Deleting a category makes its projects uncategorised.
+
+Every save calls the website's `/api/revalidate` with the `portfolio` tag, so the change is live
+on the next page load. If that call fails, the save still succeeds and the site catches up within
+an hour.
+
 ## Data model (overview)
 
 - **Collections:** `projects` (+ `project_images`, `portfolio_categories`), `posts`
@@ -100,7 +122,7 @@ status, and visitors only ever see published rows.
 | Phase | Scope | Status |
 |------:|-------|--------|
 | 0 | Foundation: schema, RLS, storage, seed, sign-in, admin shell, website revalidate endpoint | ✅ |
-| 1 | Media library + portfolio editor; website portfolio reads from Supabase | |
+| 1 | Media library + portfolio editor; website portfolio reads from Supabase | ✅ |
 | 2 | Homepage sections + site settings + menus | |
 | 3 | Journal, academy, services, about, careers, FAQ | |
 | 4 | Inbox: website forms → Supabase + email alerts | |

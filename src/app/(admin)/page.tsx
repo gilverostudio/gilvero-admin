@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { requireAdmin } from "@/lib/auth";
 import { countRows } from "@/lib/counts";
 import { env } from "@/lib/env";
-import { allModules } from "@/lib/modules";
+import { allModules, BUILT_PHASE, isBuilt } from "@/lib/modules";
 import { checkWebsiteLink } from "@/lib/revalidate";
 import { createClient } from "@/lib/supabase/server";
 import { cn } from "@/lib/utils";
@@ -120,9 +120,15 @@ export default async function DashboardPage() {
                           {m.tables.map((t) => `${counts[t.table] ?? "—"} ${t.label.toLowerCase()}`).join(" · ")}
                         </span>
                       </span>
-                      <span className="hidden shrink-0 rounded-full border border-border/70 px-2.5 py-1 text-[0.65rem] tracking-wider text-muted-foreground sm:inline">
-                        Editor in phase {m.phase}
-                      </span>
+                      {isBuilt(m) ? (
+                        <span className="hidden shrink-0 rounded-full border border-primary/40 bg-primary/10 px-2.5 py-1 text-[0.65rem] tracking-wider text-primary sm:inline">
+                          Open editor
+                        </span>
+                      ) : (
+                        <span className="hidden shrink-0 rounded-full border border-border/70 px-2.5 py-1 text-[0.65rem] tracking-wider text-muted-foreground sm:inline">
+                          Editor in phase {m.phase}
+                        </span>
+                      )}
                     </Link>
                   </li>
                 );
@@ -145,14 +151,14 @@ export default async function DashboardPage() {
             <p className="eyebrow">Roadmap</p>
             <ol className="mt-4 space-y-3 text-sm">
               {[
-                ["0", "Foundation, database & sign-in", true],
-                ["1", "Media library & portfolio", false],
-                ["2", "Homepage & site settings", false],
-                ["3", "Journal, academy, services, about", false],
-                ["4", "Inbox for every website form", false],
-                ["5", "Print store, pages & SEO", false],
-              ].map(([phase, label, done]) => (
-                <li key={phase as string} className="flex items-center gap-3">
+                [0, "Foundation, database & sign-in"],
+                [1, "Media library & portfolio"],
+                [2, "Homepage & site settings"],
+                [3, "Journal, academy, services, about"],
+                [4, "Inbox for every website form"],
+                [5, "Print store, pages & SEO"],
+              ].map(([phase, label]) => ({ phase, label, done: (phase as number) <= BUILT_PHASE })).map(({ phase, label, done }) => (
+                <li key={phase} className="flex items-center gap-3">
                   <span
                     className={cn(
                       "flex size-6 shrink-0 items-center justify-center rounded-full text-[0.65rem] font-semibold",

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { moduleGroups } from "@/lib/modules";
+import { isBuilt, moduleGroups } from "@/lib/modules";
 import { cn } from "@/lib/utils";
 
 type SidebarNavProps = { onNavigate?: () => void };
@@ -41,7 +41,7 @@ export function SidebarNav({ onNavigate }: SidebarNavProps) {
                     ) : null}
                     <Icon className={cn("size-4 shrink-0", active ? "text-primary" : "text-muted-foreground group-hover:text-foreground")} />
                     <span className="flex-1 truncate">{module.label}</span>
-                    {module.phase > 0 ? (
+                    {!isBuilt(module) ? (
                       <span className="rounded-full border border-border/80 px-1.5 py-px text-[0.6rem] tracking-wider text-muted-foreground/70">
                         P{module.phase}
                       </span>
