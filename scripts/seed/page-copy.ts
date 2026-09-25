@@ -250,6 +250,18 @@ export const componentCopy: { key: string; page: string; label: string; data: Re
     },
   },
   {
+    key: "global.footer",
+    page: "global",
+    label: "Footer",
+    data: {
+      blurb:
+        "A premium creative media house — photography, film, design, education and archival print, under one roof.",
+      contactTitle: "Studio",
+      privacyLabel: "Privacy",
+      termsLabel: "Terms",
+    },
+  },
+  {
     key: "global.floating",
     page: "global",
     label: "Floating WhatsApp button",
@@ -259,7 +271,13 @@ export const componentCopy: { key: string; page: string; label: string; data: Re
     key: "global.not-found",
     page: "global",
     label: "404 page",
-    data: { eyebrow: "Error 404", title: "This frame doesn't exist." },
+    data: {
+      eyebrow: "Error 404",
+      title: "This frame doesn't exist.",
+      copy: "The page has been moved, retired, or never made the final cut. Let's get you back to the work.",
+      homeLabel: "Back to Home",
+      portfolioLabel: "View Portfolio",
+    },
   },
   {
     key: "global.seo",
@@ -300,6 +318,9 @@ export const componentCopy: { key: string; page: string; label: string; data: Re
       secondary: { label: "View Courses", href: "/academy" },
     },
   },
+  { key: "home.services", page: "home", label: "Services overview", data: { linkLabel: "All Services" } },
+  { key: "home.featured", page: "home", label: "Recent commissions", data: { linkLabel: "Full Portfolio" } },
+  { key: "home.store", page: "home", label: "Print atelier preview", data: { linkLabel: "Shop Prints" } },
   {
     key: "home.recognition",
     page: "home",
@@ -397,4 +418,12 @@ export const componentCopy: { key: string; page: string; label: string; data: Re
     label: "Configurator labels",
     data: { size: "Size", paper: "Paper", frame: "Frame" },
   },
+];
+
+/** Extra links appended to the main nav in the mobile menu (hard-coded in mobile-menu.tsx). */
+export const mobileExtraLinks = [
+  { label: "Booking", href: "/booking" },
+  { label: "Client Area", href: "/client-area" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Careers", href: "/careers" },
 ];

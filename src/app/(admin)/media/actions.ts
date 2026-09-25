@@ -7,8 +7,8 @@ import { requireAdmin } from "@/lib/auth";
 import { MEDIA_BUCKET, MEDIA_COLUMNS, type MediaItem } from "@/lib/media";
 import { createClient } from "@/lib/supabase/server";
 
-/** Media is shown on portfolio pages today; later phases add their own tags. */
-const WEBSITE_TAGS = ["portfolio"];
+/** Images appear on portfolio pages and across the site (sections, films…). */
+const WEBSITE_TAGS = ["portfolio", "site"];
 
 const uploadedSchema = z.array(
   z.object({

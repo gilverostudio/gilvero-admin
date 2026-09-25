@@ -98,8 +98,29 @@ used (the `media_usage` view), and an image can't be deleted while it's still in
 - **Categories:** add, rename, reorder and hide (hidden categories keep their projects but show
   no filter button). Deleting a category makes its projects uncategorised.
 
-Every save calls the website's `/api/revalidate` with the `portfolio` tag, so the change is live
-on the next page load. If that call fails, the save still succeeds and the site catches up within
+### Homepage (`/homepage`)
+Thirteen collapsible editors in page order: hero, brand marquee, services cards, recent-commissions
+heading, films (with optional video links), academy preview and student quotes, print atelier
+preview, stats, client testimonials, awards and the behind-the-scenes grid, the Instagram grid,
+the journal/FAQ headings, and the closing call to action. Brands and awards are shared with the
+About page.
+
+### Settings (`/settings`)
+Brand and search defaults, contact details and social links (used by the footer, contact page,
+booking page and floating buttons), the header menu, mobile-only links, the services mega menu,
+footer columns and text, newsletter text, search quick links, the floating WhatsApp label and the
+404 page. The admin team is listed at the bottom.
+
+### How the editors work
+Every Homepage and Settings form comes from declarative field definitions in
+`src/lib/content/editors.ts`. The same definitions render the form
+(`components/content/fields-form.tsx`), validate on the server (`lib/content/schema.ts` →
+zod) and decide what gets written (`app/(admin)/content-actions.ts`). The server looks up each
+editor part in that registry by id, so table names and keys never come from the browser. Adding
+an editor means adding a definition, not writing a new form.
+
+Every save calls the website's `/api/revalidate` (`portfolio` tag for the portfolio, `site` for
+everything else), so the change is live on the next page load. If that call fails, the save still succeeds and the site catches up within
 an hour.
 
 ## Data model (overview)
@@ -123,7 +144,7 @@ status, and visitors only ever see published rows.
 |------:|-------|--------|
 | 0 | Foundation: schema, RLS, storage, seed, sign-in, admin shell, website revalidate endpoint | ✅ |
 | 1 | Media library + portfolio editor; website portfolio reads from Supabase | ✅ |
-| 2 | Homepage sections + site settings + menus | |
+| 2 | Homepage sections + site settings + menus | ✅ |
 | 3 | Journal, academy, services, about, careers, FAQ | |
 | 4 | Inbox: website forms → Supabase + email alerts | |
 | 5 | Print store, page headers/SEO, legal pages | |

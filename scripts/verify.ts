@@ -80,6 +80,23 @@ async function main() {
     check(`${table}: ${count} rows`, count === expected, `expected ${expected}`);
   }
 
+  const jsonColumns: [string, string][] = [
+    ["site_settings", "social"],
+    ["site_settings", "seo"],
+    ["pages", "header"],
+    ["pages", "cta"],
+    ["site_sections", "data"],
+    ["navigation", "data"],
+    ["posts", "body"],
+    ["legal_pages", "sections"],
+  ];
+  for (const [table, column] of jsonColumns) {
+    const bad = await one<{ count: number }>(
+      `select count(*)::int as count from ${table} where jsonb_typeof(${column}) = 'string'`,
+    );
+    check(`${table}.${column} holds real JSON (not strings)`, bad!.count === 0, `${bad!.count} double-encoded`);
+  }
+
   console.log("\n3. Round-trip against the website snapshot");
   const content = JSON.parse(readFileSync("supabase/seed/content.json", "utf8"));
 

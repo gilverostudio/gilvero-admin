@@ -15,6 +15,16 @@ const check = (l: string, ok: boolean, d = "") => { console.log(`${ok ? "✓" : 
     const { count, error } = await anon.from(t).select("*", { count: "exact", head: true });
     check(`public can read ${t} (${count})`, !error && (count ?? 0) > 0, error?.message ?? "0 rows");
   }
+  const { data: nav } = await anon.from("navigation").select("key,data");
+  check(
+    "navigation stored as real JSON",
+    (nav ?? []).length > 0 && (nav ?? []).every((n) => typeof n.data === "object"),
+  );
+  const { data: secs } = await anon.from("site_sections").select("key,data");
+  check(
+    "section copy stored as real JSON",
+    (secs ?? []).length > 0 && (secs ?? []).every((s) => typeof s.data === "object"),
+  );
   const { data: p, error: pe } = await anon.from("projects").select("slug,title,portfolio_categories(name),project_images(count)").order("sort_order").limit(1).single();
   check(`joins work: ${p?.slug} / ${(p as { portfolio_categories?: { name?: string } } | null)?.portfolio_categories?.name}`, !pe && !!p, pe?.message);
   const { data: m } = await anon.from("media").select("storage_path").eq("legacy_key", "hero").single();

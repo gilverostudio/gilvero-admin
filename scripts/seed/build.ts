@@ -14,7 +14,7 @@ import path from "node:path";
 
 import { imageSize } from "image-size";
 
-import { componentCopy, pages as pageSeeds } from "./page-copy";
+import { componentCopy, mobileExtraLinks, pages as pageSeeds } from "./page-copy";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -362,6 +362,7 @@ export function buildSeedPlan(seedDir: string): SeedPlan {
     { key: "mega", data: json(take("navigation", "megaMenu")) },
     { key: "footer", data: json(take("navigation", "footerNav")) },
     { key: "search", data: json(take("search", "searchLinks")) },
+    { key: "mobile", data: json(mobileExtraLinks) },
   ];
 
   // ---- portfolio ----------------------------------------------------------
