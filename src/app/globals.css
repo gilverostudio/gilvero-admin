@@ -1,0 +1,205 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ------------------------------------------- */
+/* Design tokens — Gilvero dark luxury theme   */
+/* ------------------------------------------- */
+
+:root {
+  --radius: 1rem;
+
+  --ink: oklch(13% 0.004 285);
+  --charcoal: oklch(19% 0.005 285);
+  --gold: oklch(80% 0.12 86);
+  --gold-soft: oklch(88% 0.07 90);
+
+  --background: oklch(11.5% 0.004 285);
+  --foreground: oklch(97% 0.002 285);
+  --card: oklch(16.5% 0.005 285);
+  --card-foreground: oklch(97% 0.002 285);
+  --popover: oklch(15.5% 0.005 285);
+  --popover-foreground: oklch(97% 0.002 285);
+  --primary: oklch(80% 0.12 86);
+  --primary-foreground: oklch(14% 0.01 80);
+  --secondary: oklch(22% 0.005 285);
+  --secondary-foreground: oklch(97% 0.002 285);
+  --muted: oklch(21% 0.005 285);
+  --muted-foreground: oklch(68% 0.008 285);
+  --accent: oklch(24% 0.012 85);
+  --accent-foreground: oklch(90% 0.08 88);
+  --destructive: oklch(60% 0.21 25);
+  --destructive-foreground: oklch(98% 0.003 250);
+  --border: oklch(28% 0.008 285);
+  --input: oklch(26% 0.008 285);
+  --ring: oklch(80% 0.12 86);
+
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-glow: 0 0 60px -20px oklch(82% 0.13 85 / 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ink: var(--ink);
+  --color-charcoal: var(--charcoal);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-glow: 0 0 60px -20px oklch(82% 0.13 85 / 0.35);
+
+  --animate-accordion-down: accordion-down 0.3s var(--ease-lux);
+  --animate-accordion-up: accordion-up 0.3s var(--ease-lux);
+
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes marquee-x {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--gold);
+    color: var(--ink);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+}
+
+/* Small uppercase gold label used above section headings */
+@utility eyebrow {
+  font-family: var(--font-display);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-size: 0.6875rem;
+}
+
+/* Gold gradient headline text */
+@utility gold-text {
+  color: transparent;
+  background: linear-gradient(
+    100deg,
+    oklch(72% 0.1 84),
+    oklch(92% 0.11 92),
+    oklch(70% 0.1 80)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Frosted glass surface with a faint gold hairline */
+@utility glass {
+  background: color-mix(in oklab, var(--card) 55%, transparent);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--gold) 14%, transparent);
+}
+
+/* Infinite horizontal marquee (pair with a w-max track duplicated once) */
+@utility marquee-track {
+  animation: marquee-x 32s linear infinite;
+}
+
+/* One-shot entrance animation, applied by <Reveal /> when in view */
+@utility reveal {
+  animation: reveal-up 0.9s var(--ease-lux) both;
+}
+
+/* ------------------------------------------- */
+/* Admin-only utilities                        */
+/* ------------------------------------------- */
+
+/* Quiet surface for panels and cards */
+@utility panel {
+  background: color-mix(in oklab, var(--card) 70%, transparent);
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  border-radius: 1.25rem;
+}
+
+/* Subtle radial gold wash for page backgrounds */
+@utility gold-wash {
+  background-image:
+    radial-gradient(60rem 30rem at 85% -10%, oklch(80% 0.12 86 / 0.08), transparent 60%),
+    radial-gradient(40rem 24rem at -10% 110%, oklch(80% 0.12 86 / 0.05), transparent 60%);
+}

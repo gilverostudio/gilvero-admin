@@ -1,0 +1,2016 @@
+{
+  "about": {
+    "aboutHeader": {
+      "eyebrow": "About the studio",
+      "title": "A creative company built for brands that cannot afford an average frame.",
+      "copy": "Gilvero began in 2016 as two people and one camera. It is now a studio, a film unit, a design practice, an academy and a print atelier — under one roof in Lahore, working across 18 countries.",
+      "crumbLabel": "About"
+    },
+    "awards": [
+      {
+        "year": "2026",
+        "name": "Regional Studio of the Year",
+        "body": "Creative Asia Awards"
+      },
+      {
+        "year": "2025",
+        "name": "Best Brand Film",
+        "body": "South Asia Film Council"
+      },
+      {
+        "year": "2025",
+        "name": "Hospitality Photography Gold",
+        "body": "Hotelier Awards"
+      },
+      {
+        "year": "2024",
+        "name": "Editorial Feature",
+        "body": "Frame Quarterly"
+      }
+    ],
+    "clients": [
+      "SERENA",
+      "NISHAT",
+      "PACKAGES MALL",
+      "KHAADI",
+      "MOBILINK",
+      "PSO",
+      "AVARI",
+      "SAPPHIRE",
+      "GOURMET",
+      "IMTIAZ"
+    ],
+    "coreValues": [
+      {
+        "title": "Craft over volume",
+        "copy": "We take fewer projects and finish each one properly."
+      },
+      {
+        "title": "Restraint",
+        "copy": "No trend chasing. The frame should still read in ten years."
+      },
+      {
+        "title": "Transparency",
+        "copy": "Written scopes, written timelines, no surprise invoices."
+      },
+      {
+        "title": "Teaching",
+        "copy": "Everything we learn on set goes back into the Academy."
+      }
+    ],
+    "equipment": [
+      "Full-frame & Super 35 cinema bodies",
+      "100MP medium-format studio system",
+      "Prime lens sets, 14mm – 400mm",
+      "Tilt-shift architectural glass",
+      "1200W bi-colour & HMI lighting",
+      "Motion control & macro rigs",
+      "Licensed drone fleet",
+      "Calibrated DaVinci grading suite"
+    ],
+    "founder": {
+      "eyebrow": "Founder",
+      "name": "Hamza Gill",
+      "role": "Director of Photography",
+      "quote": "“I care about two things on a shoot: that nobody feels watched, and that the light is doing something deliberate. Everything else is logistics.”",
+      "bio": "Hamza has led over 700 commissions across hospitality, fashion and celebration work, and still personally shoots the studio's flagship campaigns.",
+      "imageAlt": "Hamza Gill, founder of Gilvero"
+    },
+    "missionVision": [
+      {
+        "title": "Mission",
+        "copy": "To make imagery in Pakistan that holds up anywhere in the world."
+      },
+      {
+        "title": "Vision",
+        "copy": "A single creative house where capture, design, education and print reinforce each other."
+      }
+    ],
+    "story": {
+      "eyebrow": "Our story",
+      "title": "We started with weddings. We stayed for everything else.",
+      "paragraphs": [
+        "The first two years were weddings — long days, difficult light, and an obsession with getting skin tones right. That discipline turned out to translate: hotels needed the same patience, jewellery needed more, and architecture needed all of it plus geometry.",
+        "Today roughly two-thirds of our work is commercial: hospitality, property, product, fashion and corporate film. The rest is the celebration work we never wanted to stop doing.",
+        "In 2023 we opened the Academy because we kept meeting talented people with no route in. In 2025 we built the print atelier because we were tired of watching good files die in bad print."
+      ]
+    },
+    "studioTour": [
+      {
+        "key": "studio",
+        "caption": "Studio A — 2,400 sq ft cyclorama"
+      },
+      {
+        "key": "academy",
+        "caption": "Academy editing suite"
+      },
+      {
+        "key": "product",
+        "caption": "Product tenting bay"
+      },
+      {
+        "key": "store",
+        "caption": "Print atelier & framing"
+      },
+      {
+        "key": "fashion",
+        "caption": "Wardrobe & grooming"
+      }
+    ],
+    "team": [
+      {
+        "name": "Hamza Gill",
+        "role": "Founder & Director of Photography"
+      },
+      {
+        "name": "Rameez Ahsan",
+        "role": "Head of Films"
+      },
+      {
+        "name": "Areeba Naveed",
+        "role": "Creative Director, Design"
+      },
+      {
+        "name": "Zoya Kamal",
+        "role": "Head of Post Production"
+      },
+      {
+        "name": "Bilal Sohail",
+        "role": "Head of Academy"
+      },
+      {
+        "name": "Nida Farooq",
+        "role": "Producer"
+      }
+    ],
+    "timeline": [
+      {
+        "year": "2016",
+        "text": "Founded as a two-person photography practice in a rented Lahore flat."
+      },
+      {
+        "year": "2019",
+        "text": "First commercial studio opens; hospitality and product work begins."
+      },
+      {
+        "year": "2021",
+        "text": "Gilvero Films launched with a dedicated grading suite."
+      },
+      {
+        "year": "2023",
+        "text": "Gilvero Academy opens its first cohort of 24 students."
+      },
+      {
+        "year": "2025",
+        "text": "Print atelier launched with archival fine-art printing."
+      },
+      {
+        "year": "2026",
+        "text": "Creative House opens — studio, academy and print under one roof."
+      }
+    ]
+  },
+  "academy": {
+    "academyHighlights": [
+      {
+        "icon": "users",
+        "title": "Cohorts of 12",
+        "copy": "Every student gets camera time and feedback."
+      },
+      {
+        "icon": "award",
+        "title": "Certification",
+        "copy": "Graded portfolio review and Gilvero certificate."
+      },
+      {
+        "icon": "clock",
+        "title": "Evening batches",
+        "copy": "Designed around jobs and university schedules."
+      }
+    ],
+    "certificationCopy": "Every graduate completes a supervised final project, receives a graded portfolio review and a Gilvero Academy certificate. Top performers are invited to assist on live commercial shoots.",
+    "courseSlugs": [
+      "photography-mastery",
+      "cinematography-filmmaking",
+      "video-editing-post",
+      "graphic-design-brand",
+      "content-creation-freelancing",
+      "drone-aerial"
+    ],
+    "courses": [
+      {
+        "slug": "photography-mastery",
+        "title": "Photography Mastery",
+        "level": "Beginner → Pro",
+        "duration": "16 weeks",
+        "fee": "Fee on request",
+        "batch": "Mon / Wed / Fri · 6–9 PM",
+        "trainer": "Hamza Gill",
+        "summary": "Camera control, studio lighting and composition taught the way working photographers actually shoot.",
+        "curriculum": [
+          "Camera Basics & Exposure",
+          "Studio Lighting",
+          "Composition & Framing",
+          "Portrait Direction",
+          "Wedding Photography",
+          "Commercial Photography",
+          "Lightroom Workflow",
+          "Portfolio Building"
+        ],
+        "careers": [
+          "Studio Photographer",
+          "Wedding Photographer",
+          "Commercial Shooter"
+        ]
+      },
+      {
+        "slug": "cinematography-filmmaking",
+        "title": "Cinematography & Filmmaking",
+        "level": "Intermediate",
+        "duration": "20 weeks",
+        "fee": "Fee on request",
+        "batch": "Tue / Thu · 6–9 PM",
+        "trainer": "Rameez Ahsan",
+        "summary": "From camera movement and lens language to sound, edit and delivery of a finished short film.",
+        "curriculum": [
+          "Lens Language",
+          "Camera Movement & Gimbal",
+          "Cinematic Lighting",
+          "Sound for Film",
+          "Premiere Pro",
+          "DaVinci Resolve",
+          "Colour Grading",
+          "Drone Training"
+        ],
+        "careers": [
+          "Cinematographer",
+          "Camera Operator",
+          "Colourist"
+        ]
+      },
+      {
+        "slug": "video-editing-post",
+        "title": "Video Editing & Post",
+        "level": "Beginner → Pro",
+        "duration": "12 weeks",
+        "fee": "Fee on request",
+        "batch": "Sat / Sun · 11 AM–3 PM",
+        "trainer": "Zoya Kamal",
+        "summary": "Story-first editing across long form and short form, finished with motion graphics and grade.",
+        "curriculum": [
+          "Premiere Pro",
+          "After Effects",
+          "DaVinci Resolve",
+          "Motion Graphics",
+          "Short Form Editing",
+          "YouTube Editing",
+          "Commercial Editing",
+          "Delivery & Codecs"
+        ],
+        "careers": [
+          "Video Editor",
+          "Motion Designer",
+          "Content Producer"
+        ]
+      },
+      {
+        "slug": "graphic-design-brand",
+        "title": "Graphic Design & Brand Identity",
+        "level": "Beginner → Pro",
+        "duration": "14 weeks",
+        "fee": "Fee on request",
+        "batch": "Mon / Wed · 6–9 PM",
+        "trainer": "Areeba Naveed",
+        "summary": "Type, grid and identity systems built in Photoshop and Illustrator, ending with a full brand book.",
+        "curriculum": [
+          "Adobe Photoshop",
+          "Illustrator",
+          "Typography & Grid",
+          "Logo Design",
+          "Brand Identity Systems",
+          "Packaging",
+          "Social Media Design",
+          "Presentation Design"
+        ],
+        "careers": [
+          "Brand Designer",
+          "Studio Designer",
+          "Art Director"
+        ]
+      },
+      {
+        "slug": "content-creation-freelancing",
+        "title": "Content Creation & Freelancing",
+        "level": "All levels",
+        "duration": "8 weeks",
+        "fee": "Fee on request",
+        "batch": "Sat · 11 AM–4 PM",
+        "trainer": "Bilal Sohail",
+        "summary": "Build an audience, price your work properly and run a creative practice like a business.",
+        "curriculum": [
+          "Content Strategy",
+          "Shooting for Social",
+          "Client Handling",
+          "Pricing Your Work",
+          "Marketing Yourself",
+          "Contracts & Invoicing",
+          "Portfolio Building",
+          "Freelance Platforms"
+        ],
+        "careers": [
+          "Content Creator",
+          "Freelance Creative",
+          "Social Media Manager"
+        ]
+      },
+      {
+        "slug": "drone-aerial",
+        "title": "Drone & Aerial Cinematography",
+        "level": "Intermediate",
+        "duration": "6 weeks",
+        "fee": "Fee on request",
+        "batch": "Sun · 10 AM–2 PM",
+        "trainer": "Rameez Ahsan",
+        "summary": "Flight discipline, regulation, aerial composition and cinematic movement for commercial work.",
+        "curriculum": [
+          "Flight Fundamentals",
+          "Airspace & Regulation",
+          "Aerial Composition",
+          "Cinematic Moves",
+          "Real Estate Aerials",
+          "Post & Stabilisation"
+        ],
+        "careers": [
+          "Drone Operator",
+          "Aerial Cinematographer"
+        ]
+      }
+    ],
+    "coursesHeading": {
+      "eyebrow": "Courses",
+      "title": "Six programmes, one standard",
+      "copy": "Each programme includes overview, curriculum, duration, batch timing, trainer, certification and career routes."
+    },
+    "studentOutcomes": [
+      {
+        "quote": "The client-handling module is the reason I stopped underquoting.",
+        "attribution": "Fatima Noor · Design, 2025"
+      },
+      {
+        "quote": "I shot my first hotel campaign eight weeks after graduating.",
+        "attribution": "Ahsan Raza · Photography, 2024"
+      },
+      {
+        "quote": "My reels went from 2k to 400k views in three months.",
+        "attribution": "Hassan Ali · Content, 2025"
+      }
+    ],
+    "studentOutcomesHeading": {
+      "eyebrow": "Student outcomes",
+      "title": "940 graduates. 68% working within a year."
+    },
+    "studentProjectsCopy": "Recent cohort work includes a restaurant menu campaign, a 90-second brand film for a local retailer, and a full identity system for a bakery — all shot and delivered to real clients."
+  },
+  "blog": {
+    "articleBody": [
+      {
+        "type": "lead",
+        "text": "Most of what makes an image work happens before the shutter — in the decision about where the light comes from, and what it is allowed to touch."
+      },
+      {
+        "type": "heading",
+        "text": "Start with the constraint"
+      },
+      {
+        "type": "paragraph",
+        "text": "Every brief carries one hard limitation: a room you cannot relight, a fabric that eats detail, a schedule that will not move. Naming that constraint out loud, on the call, is what separates a production from a hopeful afternoon."
+      },
+      {
+        "type": "paragraph",
+        "text": "Once it is named, the approach usually follows. Hard light for texture. Negative fill for separation. A longer lens when the room refuses to cooperate."
+      },
+      {
+        "type": "heading",
+        "text": "Then build the frame backwards"
+      },
+      {
+        "type": "paragraph",
+        "text": "We block the final composition first and work back to the lighting, not the other way around. It is slower for the first twenty minutes and considerably faster for the remaining six hours."
+      },
+      {
+        "type": "quote",
+        "text": "If the frame only works because of the grade, it does not work."
+      },
+      {
+        "type": "heading",
+        "text": "Finish in the room it will live in"
+      },
+      {
+        "type": "paragraph",
+        "text": "Screen-referred work looks different on paper. We soft proof against the intended paper profile before signing anything off — which is exactly why the print atelier exists in the same building as the grading suite."
+      }
+    ],
+    "blogCategories": [
+      "All",
+      "Photography Tips",
+      "Camera Reviews",
+      "Editing Tips",
+      "Business",
+      "Student Stories",
+      "Behind the Scenes"
+    ],
+    "postSlugs": [
+      "lighting-for-black-on-black",
+      "camera-review-full-frame-2026",
+      "pricing-creative-work",
+      "grading-warm-neutrals",
+      "from-student-to-studio",
+      "behind-the-obsidian-shoot"
+    ],
+    "posts": [
+      {
+        "slug": "lighting-for-black-on-black",
+        "title": "Lighting for Black on Black",
+        "category": "Photography Tips",
+        "date": "12 July 2026",
+        "read": "7 min",
+        "excerpt": "How to keep texture alive when the garment, the backdrop and the mood are all the same colour."
+      },
+      {
+        "slug": "camera-review-full-frame-2026",
+        "title": "The Full-Frame Bodies We Actually Shoot in 2026",
+        "category": "Camera Reviews",
+        "date": "28 June 2026",
+        "read": "9 min",
+        "excerpt": "Four bodies, 300 shoot days, and the honest verdict on each of them."
+      },
+      {
+        "slug": "pricing-creative-work",
+        "title": "Pricing Creative Work Without Apologising",
+        "category": "Business",
+        "date": "09 June 2026",
+        "read": "6 min",
+        "excerpt": "A pricing framework for photographers who keep undercharging out of politeness."
+      },
+      {
+        "slug": "grading-warm-neutrals",
+        "title": "Grading Warm Neutrals That Survive Print",
+        "category": "Editing Tips",
+        "date": "22 May 2026",
+        "read": "8 min",
+        "excerpt": "Screen-to-paper colour management, explained without the jargon."
+      },
+      {
+        "slug": "from-student-to-studio",
+        "title": "From Student to Studio in Fourteen Months",
+        "category": "Student Stories",
+        "date": "03 May 2026",
+        "read": "5 min",
+        "excerpt": "Ahsan enrolled with a borrowed body. Here is exactly what he did next."
+      },
+      {
+        "slug": "behind-the-obsidian-shoot",
+        "title": "Behind the Obsidian Hotel Shoot",
+        "category": "Behind the Scenes",
+        "date": "17 April 2026",
+        "read": "10 min",
+        "excerpt": "Nine nights, one occupied property and a very specific lighting rule."
+      }
+    ]
+  },
+  "booking": {
+    "bookingAside": {
+      "eyebrow": "What happens next",
+      "talkPrompt": "Prefer to talk?"
+    },
+    "bookingForm": {
+      "service": {
+        "label": "Service",
+        "placeholder": "Select a service"
+      },
+      "date": {
+        "label": "Preferred date",
+        "placeholder": "Pick a date"
+      },
+      "city": {
+        "label": "City",
+        "placeholder": "Select a city"
+      },
+      "budget": {
+        "label": "Budget range",
+        "placeholder": "Select a range"
+      },
+      "phone": {
+        "label": "Phone"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "reference": {
+        "label": "Reference images",
+        "prompt": "Upload moodboard or reference images (optional)"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us about the project, the venue and the deliverables you need."
+      },
+      "submitLabel": "Request Booking",
+      "whatsappLabel": "Instant WhatsApp",
+      "toastMessage": "Booking request received. We'll confirm availability shortly."
+    },
+    "bookingHeader": {
+      "eyebrow": "Booking",
+      "title": "Reserve a date with the studio.",
+      "copy": "Six fields, one minute. A producer confirms availability and sends a written quote within one working day.",
+      "crumbLabel": "Booking"
+    },
+    "bookingSteps": [
+      "A producer checks crew and date availability.",
+      "You receive a written scope and fixed quote.",
+      "A 40% retainer confirms the date.",
+      "Pre-production call, moodboard and shot list."
+    ],
+    "budgets": [
+      "Under PKR 100,000",
+      "PKR 100,000 – 300,000",
+      "PKR 300,000 – 700,000",
+      "PKR 700,000 – 1,500,000",
+      "Above PKR 1,500,000"
+    ],
+    "cities": [
+      "Lahore",
+      "Karachi",
+      "Islamabad",
+      "Faisalabad",
+      "Multan",
+      "Abroad / Destination"
+    ],
+    "services": [
+      "Wedding Photography",
+      "Wedding Film",
+      "Corporate & Portrait",
+      "Product Photography",
+      "Food & Restaurant",
+      "Hotel & Hospitality",
+      "Architecture & Real Estate",
+      "Fashion & Editorial",
+      "Brand Film / Commercial",
+      "Drone Cinematography",
+      "Event Coverage",
+      "Design & Branding"
+    ]
+  },
+  "careers": {
+    "applyEmail": "studio@gilvero.com",
+    "careersHeader": {
+      "eyebrow": "Careers",
+      "title": "Do the best work of your career.",
+      "copy": "Gilvero is a small, obsessive team of photographers, filmmakers, designers and educators. We hire slowly, train relentlessly and put every name in the credits."
+    },
+    "careersIntro": {
+      "eyebrow": "Open roles",
+      "title": "Who we're looking for",
+      "copy": "Every role is based at the Creative House in Gulberg III, Lahore. Send a portfolio with your application — it matters more to us than the CV."
+    },
+    "openRoles": [
+      {
+        "title": "Retoucher",
+        "team": "Post Production",
+        "location": "Lahore · On-site",
+        "type": "Full-time",
+        "summary": "High-end skin, product and architecture retouching to the studio's grading standard. You will work directly with the Head of Post Production on commercial masters."
+      },
+      {
+        "title": "Wedding Cinematographer",
+        "team": "Films",
+        "location": "Lahore · On-site",
+        "type": "Full-time",
+        "summary": "Own coverage on multi-day weddings — from first light to the last dance. Gimbal fluency and a calm presence in crowded rooms are non-negotiable."
+      },
+      {
+        "title": "Producer",
+        "team": "Production",
+        "location": "Lahore · On-site",
+        "type": "Full-time",
+        "summary": "Scope, schedule and run commercial shoots end to end: crew, locations, permits, client comms and delivery. You are the reason nothing slips."
+      },
+      {
+        "title": "Academy Trainer (Editing)",
+        "team": "Academy",
+        "location": "Lahore · On-site",
+        "type": "Full-time",
+        "summary": "Teach the editing and post-production track — grading, retouching and delivery workflows — and run the graded portfolio reviews each cohort ends with."
+      },
+      {
+        "title": "Studio Coordinator",
+        "team": "Studio Operations",
+        "location": "Lahore · On-site",
+        "type": "Full-time",
+        "summary": "Keep the Creative House running: studio bookings, gear check-outs, client visits and print atelier hand-offs. Equal parts host and logistician."
+      }
+    ]
+  },
+  "client-area": {
+    "clientAreaHeader": {
+      "eyebrow": "Client area",
+      "title": "Your galleries, privately.",
+      "copy": "Password-protected delivery: review selects, approve the edit, download finals and track print orders.",
+      "crumbLabel": "Client Area"
+    },
+    "clientFeatures": [
+      {
+        "icon": "images",
+        "title": "Private galleries",
+        "copy": "Full-resolution previews, favourites and select lists."
+      },
+      {
+        "icon": "file-text",
+        "title": "Approvals",
+        "copy": "Sign off the edit and leave frame-level notes."
+      },
+      {
+        "icon": "download",
+        "title": "Downloads",
+        "copy": "Web and print-ready files, organised by deliverable."
+      },
+      {
+        "icon": "lock",
+        "title": "Order tracking",
+        "copy": "Live status of album and print production."
+      }
+    ],
+    "signIn": {
+      "title": "Sign in",
+      "copy": "Use the gallery code and password from your delivery email.",
+      "fields": {
+        "code": "Gallery code",
+        "password": "Password"
+      },
+      "submitLabel": "Enter Gallery",
+      "toastMessage": "Client logins go live once the delivery backend is connected."
+    }
+  },
+  "contact": {
+    "contactChannels": [
+      {
+        "icon": "map-pin",
+        "label": "Studio",
+        "value": "Gilvero Creative House, Gulberg III, Lahore, Pakistan"
+      },
+      {
+        "icon": "phone",
+        "label": "Phone",
+        "value": "+92 300 000 0000",
+        "href": "tel:+92 300 000 0000"
+      },
+      {
+        "icon": "mail",
+        "label": "Email",
+        "value": "studio@gilvero.com",
+        "href": "mailto:studio@gilvero.com"
+      },
+      {
+        "icon": "message-circle",
+        "label": "WhatsApp",
+        "value": "Message the studio",
+        "href": "https://wa.me/923000000000",
+        "external": true
+      },
+      {
+        "icon": "clock",
+        "label": "Hours",
+        "value": "Mon – Sat · 10:00 – 20:00"
+      }
+    ],
+    "contactForm": {
+      "eyebrow": "Enquiry",
+      "title": "Send a message",
+      "fields": {
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "message": "Project details"
+      },
+      "submitLabel": "Send Enquiry",
+      "whatsappLabel": "WhatsApp Instead",
+      "toastMessage": "Message sent. A producer will reply within one working day."
+    },
+    "contactHeader": {
+      "eyebrow": "Contact",
+      "title": "Come to the studio, or start with a message.",
+      "copy": "Enquiries are answered by a producer, not a bot. Expect a written response within one working day.",
+      "crumbLabel": "Contact"
+    },
+    "mapSection": {
+      "title": "Find us",
+      "iframeTitle": "Gilvero studio location",
+      "src": "https://www.google.com/maps?q=Gulberg%20III%20Lahore&output=embed"
+    },
+    "studioGallery": [
+      {
+        "key": "studio",
+        "caption": "Reception & lounge"
+      },
+      {
+        "key": "academy",
+        "caption": "Academy floor"
+      },
+      {
+        "key": "store",
+        "caption": "Print atelier"
+      }
+    ],
+    "studioGalleryTitle": "The studio"
+  },
+  "faq": {
+    "faqGroups": [
+      {
+        "topic": "Studio & Delivery",
+        "items": [
+          {
+            "question": "What does a Gilvero engagement typically cost?",
+            "answer": "Every project is scoped individually. Wedding coverage, brand campaigns and property libraries each carry their own crew, gear and post requirements — send a brief and you will receive a written quote within 24 hours."
+          },
+          {
+            "question": "Do you travel outside Pakistan?",
+            "answer": "Yes. We have delivered work in 18 countries. Travel, visa and accommodation are quoted separately and transparently."
+          },
+          {
+            "question": "How long is delivery?",
+            "answer": "Commercial stills: 5–10 working days. Wedding photography: 21 days. Films: 4–6 weeks. Rush delivery is available on request."
+          },
+          {
+            "question": "Do you shoot RAW files over to clients?",
+            "answer": "Selected RAW hand-over is possible on commercial contracts. For most engagements we deliver fully graded, retouched masters plus web-optimised sets."
+          }
+        ]
+      },
+      {
+        "topic": "Academy",
+        "items": [
+          {
+            "question": "Is the Academy suitable for complete beginners?",
+            "answer": "Most of our courses start from zero. You need a willingness to shoot every week — equipment can be borrowed from the studio during class hours."
+          },
+          {
+            "question": "Do Academy students receive a certificate?",
+            "answer": "Yes. Every course ends with a graded portfolio review and a Gilvero Academy certificate, plus placement support with our partner studios."
+          }
+        ]
+      },
+      {
+        "topic": "Prints & Client Area",
+        "items": [
+          {
+            "question": "Can I order prints from my own photographs?",
+            "answer": "Absolutely. Upload your file in the Print Store, choose size, paper and frame, and we will send a soft proof before printing."
+          },
+          {
+            "question": "How do I access my client gallery?",
+            "answer": "Every project comes with a private Client Area login containing galleries, invoices, downloads and delivery status."
+          }
+        ]
+      }
+    ],
+    "faqHeader": {
+      "eyebrow": "Questions",
+      "title": "Answers before you ask.",
+      "copy": "Pricing, delivery, the Academy and the print atelier — the questions every client and student asks, answered straight."
+    }
+  },
+  "home": {
+    "academyPreview": {
+      "eyebrow": "Gilvero Academy",
+      "title": "A creative institute run by people who still shoot.",
+      "copy": "Photography, cinematography, editing, design and freelancing — taught in the same studio where our commercial work is made. Small cohorts, real briefs, graded portfolio reviews.",
+      "imageAlt": "Students editing in the Gilvero Academy suite",
+      "quotes": [
+        {
+          "quote": "I joined with a borrowed camera. Fourteen months later I shoot for two hotel groups.",
+          "attribution": "Ahsan Raza · Class of 2024"
+        },
+        {
+          "quote": "The pricing and client-handling module paid for the course in my first month.",
+          "attribution": "Fatima Noor · Class of 2025"
+        }
+      ]
+    },
+    "awards": [
+      {
+        "year": "2026",
+        "name": "Regional Studio of the Year",
+        "body": "Creative Asia Awards"
+      },
+      {
+        "year": "2025",
+        "name": "Best Brand Film",
+        "body": "South Asia Film Council"
+      },
+      {
+        "year": "2025",
+        "name": "Hospitality Photography Gold",
+        "body": "Hotelier Awards"
+      },
+      {
+        "year": "2024",
+        "name": "Editorial Feature",
+        "body": "Frame Quarterly"
+      }
+    ],
+    "btsImages": [
+      "studio",
+      "academy",
+      "product",
+      "fashion"
+    ],
+    "faqPreview": [
+      {
+        "question": "What does a Gilvero engagement typically cost?",
+        "answer": "Every project is scoped individually. Wedding coverage, brand campaigns and property libraries each carry their own crew, gear and post requirements — send a brief and you will receive a written quote within 24 hours."
+      },
+      {
+        "question": "Do you travel outside Pakistan?",
+        "answer": "Yes. We have delivered work in 18 countries. Travel, visa and accommodation are quoted separately and transparently."
+      },
+      {
+        "question": "How long is delivery?",
+        "answer": "Commercial stills: 5–10 working days. Wedding photography: 21 days. Films: 4–6 weeks. Rush delivery is available on request."
+      },
+      {
+        "question": "Do you shoot RAW files over to clients?",
+        "answer": "Selected RAW hand-over is possible on commercial contracts. For most engagements we deliver fully graded, retouched masters plus web-optimised sets."
+      },
+      {
+        "question": "Is the Academy suitable for complete beginners?",
+        "answer": "Most of our courses start from zero. You need a willingness to shoot every week — equipment can be borrowed from the studio during class hours."
+      }
+    ],
+    "featuredWorkSection": {
+      "eyebrow": "Selected work",
+      "title": "Recent commissions",
+      "copy": "A short edit from weddings, campaigns, hospitality and property work delivered this year.",
+      "works": [
+        {
+          "slug": "the-lahore-vows",
+          "title": "The Lahore Vows",
+          "category": "Wedding",
+          "location": "Lahore, Pakistan",
+          "year": "2026",
+          "image": "wedding"
+        },
+        {
+          "slug": "aurum-timepieces",
+          "title": "Aurum Timepieces",
+          "category": "Products",
+          "location": "Studio A, Lahore",
+          "year": "2026",
+          "image": "product"
+        },
+        {
+          "slug": "the-obsidian-hotel",
+          "title": "The Obsidian Hotel",
+          "category": "Hotels",
+          "location": "Islamabad",
+          "year": "2025",
+          "image": "architecture"
+        },
+        {
+          "slug": "noir-couture",
+          "title": "Noir Couture",
+          "category": "Fashion",
+          "location": "Karachi",
+          "year": "2025",
+          "image": "fashion"
+        },
+        {
+          "slug": "meridian-tower",
+          "title": "Meridian Tower",
+          "category": "Real Estate",
+          "location": "Lahore",
+          "year": "2025",
+          "image": "architecture"
+        },
+        {
+          "slug": "atlas-brand-film",
+          "title": "Atlas Brand Film",
+          "category": "Videos",
+          "location": "Faisalabad",
+          "year": "2026",
+          "image": "studio"
+        }
+      ]
+    },
+    "filmsSection": {
+      "eyebrow": "Gilvero films",
+      "title": "Latest films",
+      "films": [
+        {
+          "title": "The Lahore Vows — Feature Film",
+          "duration": "12:04",
+          "image": "wedding"
+        },
+        {
+          "title": "Atlas Industries — Brand Film",
+          "duration": "04:11",
+          "image": "studio"
+        },
+        {
+          "title": "Obsidian Hotel — Property Film",
+          "duration": "02:38",
+          "image": "architecture"
+        }
+      ]
+    },
+    "homeHero": {
+      "eyebrow": "Creative Media House · Est. 2016",
+      "description": "Gilvero is a premium creative media company — photography, film, design, education and archival print for brands, businesses and the people who expect more than a photograph."
+    },
+    "homeImageDimensions": {
+      "hero": {
+        "width": 1920,
+        "height": 1088
+      },
+      "wedding": {
+        "width": 1200,
+        "height": 1504
+      },
+      "product": {
+        "width": 1200,
+        "height": 1504
+      },
+      "architecture": {
+        "width": 1200,
+        "height": 1504
+      },
+      "fashion": {
+        "width": 1200,
+        "height": 1504
+      },
+      "academy": {
+        "width": 1600,
+        "height": 1008
+      },
+      "store": {
+        "width": 1600,
+        "height": 1008
+      },
+      "studio": {
+        "width": 1600,
+        "height": 1200
+      }
+    },
+    "instagramSection": {
+      "eyebrow": "@gilvero",
+      "title": "From the feed",
+      "copy": "Daily frames, set diaries and student work.",
+      "images": [
+        "wedding",
+        "product",
+        "architecture",
+        "fashion",
+        "academy",
+        "store",
+        "studio",
+        "wedding",
+        "fashion",
+        "product",
+        "architecture",
+        "academy"
+      ]
+    },
+    "journalPreview": [
+      {
+        "slug": "lighting-for-black-on-black",
+        "title": "Lighting for Black on Black",
+        "category": "Photography Tips",
+        "date": "12 July 2026",
+        "read": "7 min"
+      },
+      {
+        "slug": "camera-review-full-frame-2026",
+        "title": "The Full-Frame Bodies We Actually Shoot in 2026",
+        "category": "Camera Reviews",
+        "date": "28 June 2026",
+        "read": "9 min"
+      },
+      {
+        "slug": "pricing-creative-work",
+        "title": "Pricing Creative Work Without Apologising",
+        "category": "Business",
+        "date": "09 June 2026",
+        "read": "6 min"
+      },
+      {
+        "slug": "grading-warm-neutrals",
+        "title": "Grading Warm Neutrals That Survive Print",
+        "category": "Editing Tips",
+        "date": "22 May 2026",
+        "read": "8 min"
+      }
+    ],
+    "marqueeBrands": [
+      "SERENA",
+      "NISHAT",
+      "PACKAGES MALL",
+      "KHAADI",
+      "MOBILINK",
+      "PSO",
+      "AVARI",
+      "SAPPHIRE",
+      "GOURMET",
+      "IMTIAZ"
+    ],
+    "servicesOverview": {
+      "eyebrow": "What we do",
+      "title": "Four disciplines. One standard.",
+      "copy": "Stills, motion, design and print are handled in-house, so the work stays consistent from the first frame to the framed print on the wall.",
+      "cards": [
+        {
+          "title": "Photography",
+          "copy": "Weddings, brands, product, food, architecture and fashion — lit and finished to gallery standard.",
+          "image": "wedding"
+        },
+        {
+          "title": "Cinematography",
+          "copy": "Feature-grade films, commercials, drone work and social cut-downs from a single production unit.",
+          "image": "studio"
+        },
+        {
+          "title": "Creative Studio",
+          "copy": "Identity, packaging, motion and post — the design layer that makes the imagery work.",
+          "image": "product"
+        },
+        {
+          "title": "Academy & Print",
+          "copy": "A professional creative institute and an archival print atelier, both open to the public.",
+          "image": "academy"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "value": 1200,
+        "suffix": "+",
+        "label": "Projects Delivered"
+      },
+      {
+        "value": 18,
+        "suffix": "",
+        "label": "Countries Shot In"
+      },
+      {
+        "value": 940,
+        "suffix": "+",
+        "label": "Academy Graduates"
+      },
+      {
+        "value": 32,
+        "suffix": "",
+        "label": "Awards & Features"
+      }
+    ],
+    "storePreview": {
+      "eyebrow": "Print atelier",
+      "title": "Your work, printed to last a century.",
+      "copy": "Archival fine-art paper, hand-finished frames and layflat albums produced in our own print studio.",
+      "imageAlt": "Framed fine-art prints on a dark gallery wall",
+      "products": [
+        {
+          "name": "Fine Art Prints",
+          "price": "from PKR 450"
+        },
+        {
+          "name": "Canvas & Acrylic",
+          "price": "from PKR 2,900"
+        },
+        {
+          "name": "Luxury Frames",
+          "price": "from PKR 3,400"
+        },
+        {
+          "name": "Heirloom Albums",
+          "price": "from PKR 24,000"
+        }
+      ]
+    },
+    "testimonialsSection": {
+      "eyebrow": "Clients",
+      "title": "What they said afterwards",
+      "quotes": [
+        {
+          "quote": "Gilvero shot our entire property library in nine nights. It changed how the brand is perceived online.",
+          "author": "Faisal Rehman",
+          "role": "General Manager, Obsidian Group"
+        },
+        {
+          "quote": "We have used studios in Dubai and London. This is the first team in the region operating at that level.",
+          "author": "Maryam Vaqar",
+          "role": "Creative Head, Maison Noir"
+        },
+        {
+          "quote": "I joined the academy with a borrowed camera. Fourteen months later I shoot for two hotel groups.",
+          "author": "Ahsan Raza",
+          "role": "Academy Graduate, 2024"
+        },
+        {
+          "quote": "Calm on set, ruthless in post. Exactly what a launch campaign needs.",
+          "author": "Sana Iqbal",
+          "role": "Brand Director, Aurum"
+        }
+      ]
+    }
+  },
+  "legal": {
+    "privacyPolicy": {
+      "eyebrow": "Legal",
+      "title": "Privacy Policy",
+      "crumb": "Privacy Policy",
+      "updated": "Last updated · January 2026",
+      "intro": "Gilvero Creative Media (“Gilvero”, “we”, “us”) respects the trust involved in handing a studio your wedding, your brand or your likeness. This policy explains what we collect, why we collect it, and the choices you have.",
+      "sections": [
+        {
+          "heading": "Information we collect",
+          "paragraphs": [
+            "We collect only what a working studio needs to deliver:"
+          ],
+          "bullets": [
+            "Contact details — name, email, phone and billing address when you enquire, book a shoot, enrol in the Academy or order a print.",
+            "Project details — dates, venues, briefs, shot lists and creative references you share with our producers.",
+            "Payment information — processed by our payment partners; we never store full card numbers on our own systems.",
+            "Imagery — the photographs and films we produce for you, and any files you upload to the Print Store for reproduction.",
+            "Usage data — basic analytics about how the site is used, collected in aggregate."
+          ]
+        },
+        {
+          "heading": "How we use your information",
+          "paragraphs": [
+            "Your information is used to scope and quote projects, schedule crews, deliver galleries and films, process Academy enrolments and print orders, issue invoices, and respond to enquiries. If you subscribe to our newsletter we will send occasional studio updates — every email includes an unsubscribe link.",
+            "We do not sell, rent or trade personal information. Data is shared only with the service providers required to deliver the work — payment processors, couriers for print orders and secure gallery hosting — under confidentiality obligations."
+          ]
+        },
+        {
+          "heading": "Client galleries & your images",
+          "paragraphs": [
+            "Every project is delivered through a private, password-protected Client Area. Galleries are visible only to you and the people you share access with.",
+            "We showcase selected work in our portfolio, journal and social channels only with your consent, which is agreed in your booking contract. You may withdraw portfolio consent at any time by writing to us, and we will remove the imagery from channels we control."
+          ]
+        },
+        {
+          "heading": "Academy enrolment",
+          "paragraphs": [
+            "For Academy students we additionally hold enrolment records, attendance, graded portfolio reviews and certification history. Student work is shown publicly (for example in student showcases) only with the student's permission."
+          ]
+        },
+        {
+          "heading": "Print Store orders",
+          "paragraphs": [
+            "Files you upload for printing are used solely to produce your order and its soft proof. Upload files are deleted from our production systems within 90 days of delivery unless you ask us to keep them on file for reorders."
+          ]
+        },
+        {
+          "heading": "Retention & security",
+          "paragraphs": [
+            "Delivered project masters are archived so you can re-order prints and request files years later; you may ask us to delete your archive at any time. Contracts and invoices are retained as long as law and accounting standards require.",
+            "Galleries and archives are stored on access-controlled, encrypted systems. Only team members who need your project to do their job can open it."
+          ]
+        },
+        {
+          "heading": "Your rights",
+          "paragraphs": [
+            "You may request a copy of the personal information we hold about you, ask us to correct it, or ask us to delete it where we have no continuing legal obligation to keep it. We answer every request within 30 days."
+          ]
+        },
+        {
+          "heading": "Contact",
+          "paragraphs": [
+            "Questions about this policy or your data can be sent to studio@gilvero.com or posted to Gilvero Creative House, Gulberg III, Lahore, Pakistan."
+          ]
+        }
+      ]
+    },
+    "termsOfService": {
+      "eyebrow": "Legal",
+      "title": "Terms of Service",
+      "crumb": "Terms of Service",
+      "updated": "Last updated · January 2026",
+      "intro": "These terms govern every engagement with Gilvero Creative Media — photography and film commissions, Academy enrolment and Print Store orders. Booking a shoot, enrolling or placing an order means you accept them.",
+      "sections": [
+        {
+          "heading": "Bookings & retainers",
+          "paragraphs": [
+            "A booking is confirmed when the signed engagement and the retainer stated in your quote are both received. Retainers reserve the crew and date and are non-refundable within 30 days of the shoot date.",
+            "Quotes are valid for 30 days. Scope changes after confirmation — additional days, venues or deliverables — are quoted and agreed in writing before the shoot."
+          ]
+        },
+        {
+          "heading": "Payments & cancellations",
+          "paragraphs": [
+            "The balance is due before final delivery unless your contract states otherwise. Cancellations more than 30 days before the shoot forfeit the retainer only; later cancellations may be charged for committed crew, travel and rentals.",
+            "If Gilvero must cancel for reasons within our control, everything you have paid is refunded in full, or the booking is moved to a date you approve."
+          ]
+        },
+        {
+          "heading": "Deliverables & timelines",
+          "paragraphs": [
+            "Standard delivery timelines are 5–10 working days for commercial stills, 21 days for wedding photography and 4–6 weeks for films, counted from the final shoot day. Rush delivery is available by prior agreement.",
+            "Deliverables are fully graded, retouched masters plus web-optimised sets. RAW files are not included unless your commercial contract states a selected RAW hand-over."
+          ]
+        },
+        {
+          "heading": "Image rights & usage",
+          "paragraphs": [
+            "Gilvero retains copyright in the work it creates. Your contract grants you a licence covering the uses you booked for — personal use for private clients, and the agreed media, territory and term for commercial clients.",
+            "Portfolio use of selected images by Gilvero is agreed in your booking contract and can be declined or withdrawn as described in our Privacy Policy. Neither party may resell or sublicense the work beyond the agreed licence."
+          ]
+        },
+        {
+          "heading": "Client Area & galleries",
+          "paragraphs": [
+            "Gallery credentials are personal to you; you are responsible for who you share them with. Galleries remain online for at least 12 months after delivery, and archived masters can be requested afterwards."
+          ]
+        },
+        {
+          "heading": "Academy terms",
+          "paragraphs": [
+            "Course fees are payable before the cohort starts; a place is held only once payment clears. Fees are refundable in full up to 14 days before the start date and non-refundable afterwards, though you may move to a later cohort once at no charge.",
+            "Certificates are issued on completing the course and the graded portfolio review. Studio equipment borrowed during class hours must be returned in the condition it left; students are liable for loss or negligent damage."
+          ]
+        },
+        {
+          "heading": "Print Store orders",
+          "paragraphs": [
+            "Every order receives a soft proof before printing; production begins once you approve it. Because each print is made to order, orders cannot be cancelled after proof approval.",
+            "Prints that arrive damaged or with a production fault are reprinted or refunded — notify us with photographs within 7 days of delivery. Colour variance within industry-standard tolerance between screen and print is not a fault.",
+            "You must own or hold rights to any file you upload for printing. Gilvero may decline to reproduce material that infringes copyright or that we judge unlawful."
+          ]
+        },
+        {
+          "heading": "Liability",
+          "paragraphs": [
+            "Gilvero's total liability under any engagement is limited to the fees paid for that engagement. We are not liable for indirect or consequential loss, or for delays caused by events beyond our reasonable control — though we will always propose a remedy, including reshoots where practicable."
+          ]
+        },
+        {
+          "heading": "Governing law & changes",
+          "paragraphs": [
+            "These terms are governed by the laws of Pakistan, and disputes fall to the courts of Lahore. We may update these terms from time to time; the version in force when you book is the one that applies to your engagement.",
+            "Questions about these terms can be sent to studio@gilvero.com."
+          ]
+        }
+      ]
+    }
+  },
+  "navigation": {
+    "footerNav": [
+      {
+        "title": "Studio",
+        "links": [
+          {
+            "label": "About",
+            "href": "/about"
+          },
+          {
+            "label": "Services",
+            "href": "/services"
+          },
+          {
+            "label": "Portfolio",
+            "href": "/portfolio"
+          },
+          {
+            "label": "Careers",
+            "href": "/careers"
+          }
+        ]
+      },
+      {
+        "title": "Learn & Shop",
+        "links": [
+          {
+            "label": "Academy",
+            "href": "/academy"
+          },
+          {
+            "label": "Print Store",
+            "href": "/store"
+          },
+          {
+            "label": "Journal",
+            "href": "/blog"
+          },
+          {
+            "label": "FAQ",
+            "href": "/faq"
+          }
+        ]
+      },
+      {
+        "title": "Clients",
+        "links": [
+          {
+            "label": "Booking",
+            "href": "/booking"
+          },
+          {
+            "label": "Client Area",
+            "href": "/client-area"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy"
+          }
+        ]
+      }
+    ],
+    "mainNav": [
+      {
+        "label": "About",
+        "href": "/about"
+      },
+      {
+        "label": "Services",
+        "href": "/services"
+      },
+      {
+        "label": "Portfolio",
+        "href": "/portfolio"
+      },
+      {
+        "label": "Academy",
+        "href": "/academy"
+      },
+      {
+        "label": "Print Store",
+        "href": "/store"
+      },
+      {
+        "label": "Journal",
+        "href": "/blog"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "megaMenu": {
+      "intro": {
+        "eyebrow": "Services",
+        "description": "One studio for stills, film, design and print — engineered for brands that cannot afford an average frame.",
+        "cta": {
+          "label": "All Services",
+          "href": "/services"
+        }
+      },
+      "columns": [
+        {
+          "title": "Photography",
+          "links": [
+            {
+              "label": "Weddings & Events",
+              "href": "/services"
+            },
+            {
+              "label": "Corporate & Portrait",
+              "href": "/services"
+            },
+            {
+              "label": "Product & Jewelry",
+              "href": "/services"
+            },
+            {
+              "label": "Food & Restaurant",
+              "href": "/services"
+            },
+            {
+              "label": "Architecture & Real Estate",
+              "href": "/services"
+            },
+            {
+              "label": "Fashion & Editorial",
+              "href": "/services"
+            }
+          ]
+        },
+        {
+          "title": "Films",
+          "links": [
+            {
+              "label": "Wedding Films",
+              "href": "/services"
+            },
+            {
+              "label": "Brand Films & Ads",
+              "href": "/services"
+            },
+            {
+              "label": "Drone Cinematography",
+              "href": "/services"
+            },
+            {
+              "label": "Social & Reels",
+              "href": "/services"
+            },
+            {
+              "label": "Podcast & Interviews",
+              "href": "/services"
+            },
+            {
+              "label": "Live Streaming",
+              "href": "/services"
+            }
+          ]
+        },
+        {
+          "title": "Creative Studio",
+          "links": [
+            {
+              "label": "Brand Identity",
+              "href": "/services"
+            },
+            {
+              "label": "Graphic Design",
+              "href": "/services"
+            },
+            {
+              "label": "Post & Color Grading",
+              "href": "/services"
+            },
+            {
+              "label": "Motion & VFX",
+              "href": "/services"
+            },
+            {
+              "label": "Print Store",
+              "href": "/store"
+            },
+            {
+              "label": "Academy",
+              "href": "/academy"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "portfolio": {
+    "portfolioCategories": [
+      "All",
+      "Wedding",
+      "Corporate",
+      "Commercial",
+      "Products",
+      "Fashion",
+      "Architecture",
+      "Real Estate",
+      "Drone",
+      "Travel",
+      "Food",
+      "Hotels",
+      "Schools",
+      "Videos"
+    ],
+    "projectSlugs": [
+      "the-lahore-vows",
+      "aurum-timepieces",
+      "the-obsidian-hotel",
+      "noir-couture",
+      "meridian-tower",
+      "atlas-brand-film"
+    ],
+    "projects": [
+      {
+        "slug": "the-lahore-vows",
+        "title": "The Lahore Vows",
+        "category": "Wedding",
+        "client": "Private Client",
+        "location": "Lahore, Pakistan",
+        "year": "2026",
+        "image": "wedding",
+        "story": "A three-day celebration documented as one continuous film — candlelit, unhurried and entirely unposed.",
+        "challenge": "Four venues, 900 guests and a strict no-flash rule inside a heritage hall lit only by candle.",
+        "solution": "A six-person crew on fast primes, a discreet two-camera film unit and a same-night editorial edit.",
+        "result": "A 12-minute feature film and a 220-page album delivered within 21 days; 2.4M organic views.",
+        "services": [
+          "Photography",
+          "Cinematography",
+          "Album Design",
+          "Drone"
+        ],
+        "testimonial": {
+          "quote": "They disappeared into the day and came back with the only record of it that feels true.",
+          "author": "Hina & Zeeshan",
+          "role": "Clients"
+        }
+      },
+      {
+        "slug": "aurum-timepieces",
+        "title": "Aurum Timepieces",
+        "category": "Products",
+        "client": "Aurum",
+        "location": "Studio A, Lahore",
+        "year": "2026",
+        "image": "product",
+        "story": "A launch campaign for a gold-cased collection, built entirely on controlled reflection.",
+        "challenge": "Polished gold reflects the entire room. Every surface in the frame had to be designed.",
+        "solution": "Tented lighting, motion-controlled macro passes and focus-stacked composites at 100MP.",
+        "result": "Campaign ran across 14 markets; 38% lift in launch-week conversions.",
+        "services": [
+          "Product Photography",
+          "Retouching",
+          "Motion"
+        ],
+        "testimonial": {
+          "quote": "The most disciplined product studio we have worked with, anywhere.",
+          "author": "Sana Iqbal",
+          "role": "Brand Director, Aurum"
+        }
+      },
+      {
+        "slug": "the-obsidian-hotel",
+        "title": "The Obsidian Hotel",
+        "category": "Hotels",
+        "client": "Obsidian Group",
+        "location": "Islamabad",
+        "year": "2025",
+        "image": "architecture",
+        "story": "A full property library — architecture, interiors, food and lifestyle — shot across nine nights.",
+        "challenge": "Occupied property, no closures, and mixed colour temperatures in every room.",
+        "solution": "Night-only schedule, tungsten balancing and a fixed 24mm architectural grid.",
+        "result": "Asset library now powers the group's global OTA and print presence.",
+        "services": [
+          "Architecture",
+          "Interior",
+          "Food",
+          "Video"
+        ],
+        "testimonial": {
+          "quote": "Our booking imagery finally matches the property.",
+          "author": "Faisal Rehman",
+          "role": "GM, Obsidian Group"
+        }
+      },
+      {
+        "slug": "noir-couture",
+        "title": "Noir Couture",
+        "category": "Fashion",
+        "client": "Maison Noir",
+        "location": "Karachi",
+        "year": "2025",
+        "image": "fashion",
+        "story": "An autumn campaign built on one hard light and absolute black.",
+        "challenge": "Sheer black-on-black fabric that loses all detail under conventional lighting.",
+        "solution": "Single-source hard light, negative fill and a bespoke print-matched grade.",
+        "result": "Editorial placement in three regional titles and a sold-out capsule.",
+        "services": [
+          "Fashion Photography",
+          "Retouching",
+          "Art Direction"
+        ],
+        "testimonial": {
+          "quote": "They understood the collection before we finished describing it.",
+          "author": "Maryam Vaqar",
+          "role": "Creative Head, Maison Noir"
+        }
+      },
+      {
+        "slug": "meridian-tower",
+        "title": "Meridian Tower",
+        "category": "Real Estate",
+        "client": "Meridian Developments",
+        "location": "Lahore",
+        "year": "2025",
+        "image": "architecture",
+        "story": "Aerial and interior coverage of a 34-floor mixed-use development.",
+        "challenge": "Restricted airspace and a two-week pre-launch window.",
+        "solution": "Licensed drone unit, twilight-only aerials and virtual-tour capture.",
+        "result": "62% of inventory reserved before public launch.",
+        "services": [
+          "Drone",
+          "Architecture",
+          "Video"
+        ],
+        "testimonial": {
+          "quote": "The aerials sold the top four floors on their own.",
+          "author": "Adnan Sheikh",
+          "role": "Sales Director, Meridian"
+        }
+      },
+      {
+        "slug": "atlas-brand-film",
+        "title": "Atlas Brand Film",
+        "category": "Videos",
+        "client": "Atlas Industries",
+        "location": "Faisalabad",
+        "year": "2026",
+        "image": "studio",
+        "story": "A four-minute manufacturing film shot across three plants in five days.",
+        "challenge": "Live production lines, heat, dust and zero downtime allowance.",
+        "solution": "Compact two-unit crew, gimbal-led coverage and on-set colour management.",
+        "result": "Film opened the group's investor day and now anchors their careers page.",
+        "services": [
+          "Brand Film",
+          "Interviews",
+          "Motion Graphics"
+        ],
+        "testimonial": {
+          "quote": "It made a factory look like a flagship.",
+          "author": "Usman Tariq",
+          "role": "CMO, Atlas"
+        }
+      }
+    ]
+  },
+  "search": {
+    "searchLinks": [
+      {
+        "label": "Wedding Photography",
+        "href": "/services"
+      },
+      {
+        "label": "Brand Films",
+        "href": "/services"
+      },
+      {
+        "label": "Drone Cinematography",
+        "href": "/services"
+      },
+      {
+        "label": "Portfolio",
+        "href": "/portfolio"
+      },
+      {
+        "label": "Academy Courses",
+        "href": "/academy"
+      },
+      {
+        "label": "Print Store",
+        "href": "/store"
+      },
+      {
+        "label": "Book a Shoot",
+        "href": "/booking"
+      },
+      {
+        "label": "Client Area",
+        "href": "/client-area"
+      },
+      {
+        "label": "Careers",
+        "href": "/careers"
+      },
+      {
+        "label": "FAQ",
+        "href": "/faq"
+      },
+      {
+        "label": "Journal",
+        "href": "/blog"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ]
+  },
+  "services": {
+    "engagementTiers": [
+      {
+        "name": "Essential",
+        "for": "Single-day coverage",
+        "price": "Quote in 24h",
+        "items": [
+          "1 photographer",
+          "6 hours on location",
+          "80 graded images",
+          "Online gallery"
+        ]
+      },
+      {
+        "name": "Signature",
+        "for": "Most commissions",
+        "price": "Quote in 24h",
+        "items": [
+          "2 photographers + film unit",
+          "Full-day coverage",
+          "250 graded images",
+          "3-minute highlight film",
+          "Drone coverage"
+        ],
+        "featured": true
+      },
+      {
+        "name": "Atelier",
+        "for": "Multi-day & campaign",
+        "price": "Quote in 24h",
+        "items": [
+          "Full crew & producer",
+          "Unlimited days",
+          "Art direction",
+          "Feature film + cut-downs",
+          "Print & album package"
+        ]
+      }
+    ],
+    "processSteps": [
+      {
+        "title": "Brief",
+        "copy": "A call, a written scope and a fixed quote."
+      },
+      {
+        "title": "Pre-production",
+        "copy": "Moodboards, shot lists, permits, casting and schedule."
+      },
+      {
+        "title": "Production",
+        "copy": "Our crew, our gear, one producer accountable for the day."
+      },
+      {
+        "title": "Post",
+        "copy": "Retouching, grade, sound and delivery in every format you need."
+      }
+    ],
+    "serviceCategories": [
+      {
+        "id": "photography",
+        "title": "Photography",
+        "intro": "Light, colour and restraint. Every frame is lit, art-directed and retouched to gallery standard.",
+        "items": [
+          "Wedding Photography",
+          "Engagement",
+          "Nikah",
+          "Mehndi",
+          "Baraat",
+          "Walima",
+          "Birthday",
+          "Baby Shoot",
+          "Kids",
+          "Family",
+          "Maternity",
+          "Newborn",
+          "Corporate",
+          "Business Portrait",
+          "Product Photography",
+          "Jewelry Photography",
+          "Food Photography",
+          "Restaurant Photography",
+          "Hotel Photography",
+          "Architecture",
+          "Interior",
+          "Real Estate",
+          "Industrial",
+          "School Photography",
+          "Drone Photography",
+          "Travel",
+          "Sports",
+          "Fashion",
+          "Model Portfolio",
+          "Automobile Photography",
+          "Event Photography",
+          "Commercial Photography",
+          "Lifestyle Photography"
+        ]
+      },
+      {
+        "id": "videography",
+        "title": "Videography",
+        "intro": "Cinema-grade capture on full-frame and Super 35 bodies, finished in a calibrated grading suite.",
+        "items": [
+          "Wedding Films",
+          "Corporate Videos",
+          "Commercial Ads",
+          "Product Videos",
+          "Food Videos",
+          "Restaurant Videos",
+          "Hotel Videos",
+          "Real Estate Videos",
+          "Drone Cinematography",
+          "Music Videos",
+          "Interviews",
+          "Podcast Production",
+          "Documentary",
+          "Social Media Reels",
+          "YouTube Production",
+          "Brand Films",
+          "Event Coverage",
+          "Live Streaming",
+          "360 Video"
+        ]
+      },
+      {
+        "id": "creative",
+        "title": "Creative Services",
+        "intro": "An in-house design and post studio that turns raw capture into a complete brand system.",
+        "items": [
+          "Graphic Design",
+          "Logo Design",
+          "Brand Identity",
+          "Packaging",
+          "Social Media Design",
+          "Marketing Materials",
+          "Business Cards",
+          "Brochures",
+          "Flyers",
+          "Presentation Design",
+          "Video Editing",
+          "Color Grading",
+          "Motion Graphics",
+          "Animation",
+          "VFX",
+          "YouTube Editing",
+          "Short Form Editing",
+          "Commercial Editing"
+        ]
+      }
+    ]
+  },
+  "store": {
+    "configuratorHeading": {
+      "eyebrow": "Order process",
+      "title": "Configure your print",
+      "copy": "Upload, choose, approve the soft proof, and we print. Delivery across Pakistan in 3–6 working days."
+    },
+    "defaultPrintSize": "8×10",
+    "frameTypes": [
+      {
+        "name": "Wood",
+        "note": "Oak, walnut, matte black"
+      },
+      {
+        "name": "Metal",
+        "note": "Brushed aluminium, brass"
+      },
+      {
+        "name": "Luxury",
+        "note": "Hand-finished gold leaf"
+      },
+      {
+        "name": "Floating",
+        "note": "Shadow-gap mount"
+      },
+      {
+        "name": "Glass",
+        "note": "Anti-glare museum glass"
+      },
+      {
+        "name": "Canvas",
+        "note": "Frameless gallery wrap"
+      }
+    ],
+    "paperTypes": [
+      "Museum Matte 310gsm",
+      "Baryta Gloss 315gsm",
+      "Textured Rag 320gsm",
+      "Metallic 255gsm"
+    ],
+    "printSizes": [
+      "4×6",
+      "5×7",
+      "6×8",
+      "8×10",
+      "8×12",
+      "10×15",
+      "12×18",
+      "16×20",
+      "18×24",
+      "20×30",
+      "24×36",
+      "A4",
+      "A3",
+      "A2",
+      "A1",
+      "Custom Size"
+    ],
+    "productsHeading": {
+      "eyebrow": "Products",
+      "title": "What we print"
+    },
+    "storeCta": {
+      "title": "Need help choosing a size?",
+      "copy": "Send us the image and the wall dimensions — we will recommend a size and frame.",
+      "primary": {
+        "label": "WhatsApp the Studio",
+        "href": "/contact"
+      },
+      "secondary": {
+        "label": "Read FAQ",
+        "href": "/faq"
+      }
+    },
+    "storeHeader": {
+      "eyebrow": "Print atelier",
+      "title": "Prints made to outlive the hard drive.",
+      "copy": "Archival papers, hand-finished frames and layflat albums, produced and inspected in our own print studio.",
+      "action": "Shop Now"
+    },
+    "storeProducts": [
+      {
+        "name": "Fine Art Photo Prints",
+        "from": "PKR 450",
+        "note": "Museum matte, 310gsm"
+      },
+      {
+        "name": "Canvas Prints",
+        "from": "PKR 2,900",
+        "note": "Gallery wrap, pine stretcher"
+      },
+      {
+        "name": "Luxury Frames",
+        "from": "PKR 3,400",
+        "note": "Wood, metal, floating, glass"
+      },
+      {
+        "name": "Heirloom Albums",
+        "from": "PKR 24,000",
+        "note": "Layflat, leather bound"
+      },
+      {
+        "name": "Acrylic Prints",
+        "from": "PKR 6,200",
+        "note": "5mm face-mounted acrylic"
+      },
+      {
+        "name": "Passport & ID Photos",
+        "from": "PKR 350",
+        "note": "All embassy specifications"
+      },
+      {
+        "name": "Photo Gifts",
+        "from": "PKR 1,200",
+        "note": "Mugs, keepsakes, desk frames"
+      },
+      {
+        "name": "Wall Art Sets",
+        "from": "PKR 8,500",
+        "note": "Curated triptychs"
+      },
+      {
+        "name": "Large Posters",
+        "from": "PKR 1,900",
+        "note": "Up to 24×36 inches"
+      },
+      {
+        "name": "Collages",
+        "from": "PKR 2,400",
+        "note": "Custom multi-frame layouts"
+      }
+    ],
+    "storeToasts": {
+      "shopNow": "Print configurator below.",
+      "addToBasket": "{name} added to basket",
+      "chooseFile": "File upload becomes live once the store backend is connected.",
+      "checkout": "Added to basket — soft proof will be emailed."
+    },
+    "trackingHeading": {
+      "eyebrow": "Order tracking",
+      "title": "Know exactly where your print is"
+    },
+    "trackingSteps": [
+      "Order placed",
+      "Soft proof sent",
+      "Printing",
+      "Framing & QC",
+      "Dispatched"
+    ],
+    "uploadPanel": {
+      "title": "Upload your image",
+      "copy": "JPEG or TIFF, up to 200MB. We check resolution before printing.",
+      "action": "Choose File"
+    }
+  },
+  "site-config": {
+    "siteConfig": {
+      "name": "GILVERO",
+      "legalName": "Gilvero Creative Media",
+      "tagline": "Capture. Create. Inspire.",
+      "title": "GILVERO — Capture. Create. Inspire. | Photography, Film & Design",
+      "description": "Gilvero is a luxury creative media company: cinematic photography, film production, brand design, a professional academy and archival fine-art printing.",
+      "url": "https://gilvero.com",
+      "phone": "+92 300 000 0000",
+      "whatsapp": "https://wa.me/923000000000",
+      "email": "studio@gilvero.com",
+      "address": "Gilvero Creative House, Gulberg III, Lahore, Pakistan",
+      "hours": "Mon – Sat · 10:00 – 20:00",
+      "social": {
+        "instagram": "#",
+        "youtube": "#",
+        "linkedin": "#"
+      }
+    }
+  },
+  "images": {
+    "images": {
+      "hero": "/images/hero.jpg",
+      "wedding": "/images/work-wedding.jpg",
+      "product": "/images/work-product.jpg",
+      "architecture": "/images/work-architecture.jpg",
+      "fashion": "/images/work-fashion.jpg",
+      "academy": "/images/academy.jpg",
+      "store": "/images/store.jpg",
+      "studio": "/images/studio.jpg"
+    }
+  }
+}
