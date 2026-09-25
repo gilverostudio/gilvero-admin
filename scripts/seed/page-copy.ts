@@ -408,10 +408,12 @@ export const componentCopy: { key: string; page: string; label: string; data: Re
         title: "Three ways to work with us",
         copy: "Indicative structures only — every project is quoted on scope, crew and delivery.",
         actionLabel: "Get a Quote",
+        featuredLabel: "Most chosen",
       },
       process: { eyebrow: "Process", title: "How a Gilvero project runs" },
     },
   },
+  { key: "careers.intro", page: "careers", label: "Open roles intro", data: { applyLabel: "Apply for this role" } },
   {
     key: "store.configurator",
     page: "store",

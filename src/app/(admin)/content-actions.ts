@@ -48,7 +48,25 @@ export async function savePart(editorId: string, partIndex: number, value: unkno
     case "collection": {
       const items = data[part.list.name] as Row[];
       const scope = part.scope ?? {};
-      const rows: Row[] = items.map((item, index) => ({ ...item, ...scope, sort_order: index }));
+      let rows: Row[] = items.map((item, index) => ({ ...item, ...scope, sort_order: index }));
+      if (part.derive === "faq") {
+        // One flat list in the editor → topic groups + homepage order on the site.
+        const topics: string[] = [];
+        const perTopic = new Map<string, number>();
+        let homeIndex = 0;
+        rows = rows.map((row) => {
+          const topic = String(row.topic);
+          if (!topics.includes(topic)) topics.push(topic);
+          const within = perTopic.get(topic) ?? 0;
+          perTopic.set(topic, within + 1);
+          return {
+            ...row,
+            topic_order: topics.indexOf(topic),
+            sort_order: within,
+            home_order: row.show_on_home ? homeIndex++ : 0,
+          };
+        });
+      }
       const existingRows = rows.filter((r) => r.id);
       const newRows = rows.filter((r) => !r.id).map((r) => Object.fromEntries(Object.entries(r).filter(([k]) => k !== "id")));
 

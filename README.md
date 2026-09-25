@@ -111,6 +111,26 @@ booking page and floating buttons), the header menu, mobile-only links, the serv
 footer columns and text, newsletter text, search quick links, the floating WhatsApp label and the
 404 page. The admin team is listed at the bottom.
 
+### Journal (`/journal`)
+Articles are listed newest first by publish date, with quick publish/unpublish and "show on
+homepage" toggles. The article editor has a title, URL, excerpt, category, publish date, a read
+time (estimated from the text if left empty), cover, SEO fields, and a **block editor** for the
+body: lead, heading, paragraph, quote and image blocks that you can drag to reorder or change type.
+Pressing Enter at the end of a lead or heading starts a new paragraph. Journal categories can be
+added, renamed, reordered and deleted.
+
+### Academy, Services, About, Careers, FAQ
+All five are form-engine pages (see below):
+- **Academy:** courses (with a URL, curriculum modules, career routes, draft/published and an
+  optional header image), highlights, headings, student outcomes and the text shared by course
+  pages.
+- **Services:** catalogue tabs and their services, engagement tiers, process steps.
+- **About:** story paragraphs, mission and vision, values, founder, team (with photos and
+  show/hide), studio tour, timeline and equipment.
+- **Careers:** open or close roles.
+- **FAQ:** one sortable list. Questions are grouped by their topic on the FAQ page, and ticked
+  questions also appear on the homepage, in the same order.
+
 ### How the editors work
 Every Homepage and Settings form comes from declarative field definitions in
 `src/lib/content/editors.ts`. The same definitions render the form
@@ -145,6 +165,6 @@ status, and visitors only ever see published rows.
 | 0 | Foundation: schema, RLS, storage, seed, sign-in, admin shell, website revalidate endpoint | ✅ |
 | 1 | Media library + portfolio editor; website portfolio reads from Supabase | ✅ |
 | 2 | Homepage sections + site settings + menus | ✅ |
-| 3 | Journal, academy, services, about, careers, FAQ | |
+| 3 | Journal, academy, services, about, careers, FAQ | ✅ |
 | 4 | Inbox: website forms → Supabase + email alerts | |
 | 5 | Print store, page headers/SEO, legal pages | |

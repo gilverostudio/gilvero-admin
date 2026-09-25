@@ -25,7 +25,10 @@ export async function loadPart(part: Part): Promise<PartValue> {
     }
     case "collection": {
       const columns = ["id", ...part.list.fields.map((f) => f.name)].join(", ");
-      let query = supabase.from(part.table).select(columns).order("sort_order");
+      let query =
+        part.derive === "faq"
+          ? supabase.from(part.table).select(columns).order("topic_order").order("sort_order")
+          : supabase.from(part.table).select(columns).order("sort_order");
       for (const [column, value] of Object.entries(part.scope ?? {})) query = query.eq(column, value);
       const { data } = await query;
       return normalize(fields, { items: (data ?? []) as unknown as PartValue[] });

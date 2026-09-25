@@ -20,6 +20,10 @@ export type Field =
   | (Base & { type: "select"; options: { value: string; label: string }[] })
   | (Base & { type: "switch" })
   | (Base & { type: "strings"; max?: number })
+  /** Growable list of text entries (paragraphs, curriculum modules…), stored as string[]. */
+  | (Base & { type: "textlist"; itemLabel: string; multiline?: boolean; max?: number; maxLength?: number })
+  /** URL segment: lowercase letters, numbers and hyphens. */
+  | (Base & { type: "slug"; prefix: string })
   /** Fixed number of single-line inputs, stored as string[] (e.g. a two-line headline). */
   | (Base & { type: "lines"; lineLabels: string[]; max?: number })
   | (Base & { type: "group"; fields: Field[]; columns?: 1 | 2 })
@@ -72,6 +76,15 @@ function fieldSchema(field: Field): z.ZodType {
       return z.array(text(200).min(1)).max(field.max ?? 100);
     case "lines":
       return z.array(text(field.max ?? 200)).length(field.lineLabels.length);
+    case "textlist":
+      return z.array(text(field.maxLength ?? 2000).min(1, `Empty ${field.itemLabel.toLowerCase()} — remove it or add text.`)).max(field.max ?? 100);
+    case "slug":
+      return z
+        .string()
+        .trim()
+        .min(1, `${field.label} is required.`)
+        .max(100)
+        .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Use lowercase letters, numbers and hyphens only.");
     case "group":
       return objectSchema(field.fields);
     case "list":
@@ -92,6 +105,7 @@ export function emptyValue(field: Field): unknown {
       return null;
     case "images":
     case "strings":
+    case "textlist":
     case "list":
       return [];
     case "lines":

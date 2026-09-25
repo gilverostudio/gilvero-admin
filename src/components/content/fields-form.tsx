@@ -39,7 +39,7 @@ export function FieldsForm({ fields, value, onChange, idPrefix, columns = 1 }: F
     <div className={cn("grid gap-5", gridCols[columns])}>
       {fields.map((field) => {
         const id = `${idPrefix}-${field.name}`;
-        const wide = columns > 1 && ["list", "group", "images", "textarea", "lines", "strings"].includes(field.type);
+        const wide = columns > 1 && ["list", "group", "images", "textarea", "lines", "strings", "textlist"].includes(field.type);
         return (
           <div key={field.name} className={cn(wide && "sm:col-span-full")}>
             <FieldControl field={field} id={id} value={value[field.name]} onChange={(v) => set(field.name, v)} />
@@ -141,6 +141,22 @@ function FieldControl({ field, id, value, onChange }: { field: Field; id: string
         </FieldShell>
       );
     }
+    case "slug":
+      return (
+        <FieldShell label={field.label} htmlFor={id} hint={field.hint ?? "Changing it breaks links already shared."}>
+          <div className="flex items-center overflow-hidden rounded-xl border border-border/70 bg-background/40 focus-within:ring-1 focus-within:ring-ring">
+            <span className="shrink-0 pl-3.5 text-sm text-muted-foreground">{field.prefix}</span>
+            <input
+              id={id}
+              value={String(value ?? "")}
+              onChange={(e) => onChange(e.target.value.toLowerCase().replace(/[^a-z0-9-]/g, "-"))}
+              className="h-11 min-w-0 flex-1 bg-transparent pr-3.5 text-sm outline-none"
+            />
+          </div>
+        </FieldShell>
+      );
+    case "textlist":
+      return <TextListField field={field} id={id} value={(value as string[]) ?? []} onChange={onChange} />;
     case "image":
       return <ImageField field={field} id={id} value={(value as string | null) ?? null} onChange={onChange} />;
     case "images":
@@ -268,6 +284,93 @@ function ImagesField({ field, value, onChange }: { field: Extract<Field, { type:
         }}
       />
     </FieldShell>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// Text lists (paragraphs, modules…)
+// ---------------------------------------------------------------------------
+
+function TextListField({
+  field,
+  id,
+  value,
+  onChange,
+}: {
+  field: Extract<Field, { type: "textlist" }>;
+  id: string;
+  value: string[];
+  onChange: (v: unknown) => void;
+}) {
+  const [keys, setKeys] = useState<string[]>(() => value.map((_, i) => `t${i}`));
+  const aligned = value.map((_, i) => keys[i] ?? `n${i}`);
+  const entries = value.map((text, i) => ({ key: aligned[i], text }));
+  const max = field.max ?? 100;
+
+  return (
+    <div>
+      <p className="mb-2.5 text-xs tracking-wide text-muted-foreground">
+        {field.label} <span className="text-muted-foreground/60">({value.length})</span>
+      </p>
+      {entries.length ? (
+        <Sortable
+          items={entries}
+          getId={(e) => e.key}
+          onReorder={(next) => {
+            setKeys(next.map((e) => e.key));
+            onChange(next.map((e) => e.text));
+          }}
+          className="space-y-2"
+          renderItem={(entry, handle, index) => (
+            <div className="flex items-start gap-1.5">
+              <div className="pt-1.5">{handle}</div>
+              {field.multiline ? (
+                <Textarea
+                  id={`${id}-${index}`}
+                  aria-label={`${field.itemLabel} ${index + 1}`}
+                  value={entry.text}
+                  rows={3}
+                  maxLength={field.maxLength}
+                  onChange={(e) => onChange(value.map((v, i) => (i === index ? e.target.value : v)))}
+                />
+              ) : (
+                <Input
+                  id={`${id}-${index}`}
+                  aria-label={`${field.itemLabel} ${index + 1}`}
+                  value={entry.text}
+                  maxLength={field.maxLength}
+                  onChange={(e) => onChange(value.map((v, i) => (i === index ? e.target.value : v)))}
+                />
+              )}
+              <button
+                type="button"
+                aria-label={`Remove ${field.itemLabel.toLowerCase()}`}
+                onClick={() => {
+                  setKeys(aligned.filter((_, i) => i !== index));
+                  onChange(value.filter((_, i) => i !== index));
+                }}
+                className="mt-1.5 flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-secondary hover:text-destructive"
+              >
+                <Trash2 className="size-4" />
+              </button>
+            </div>
+          )}
+        />
+      ) : null}
+      <Button
+        type="button"
+        size="sm"
+        variant="quiet"
+        className="mt-3"
+        disabled={value.length >= max}
+        onClick={() => {
+          setKeys([...aligned, crypto.randomUUID()]);
+          onChange([...value, ""]);
+        }}
+      >
+        <Plus /> Add {field.itemLabel.toLowerCase()}
+      </Button>
+    </div>
   );
 }
 

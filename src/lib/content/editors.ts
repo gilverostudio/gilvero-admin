@@ -1,3 +1,4 @@
+import { aboutEditors, academyEditors, careersEditors, faqEditors, servicesEditors } from "./editors-pages";
 import type { Field } from "./schema";
 
 /**
@@ -8,9 +9,24 @@ export type Part =
   | { kind: "section"; key: string; title?: string; fields: Field[] }
   | {
       kind: "collection";
-      table: "clients" | "films" | "stats" | "testimonials" | "awards";
+      table:
+        | "clients"
+        | "films"
+        | "stats"
+        | "testimonials"
+        | "awards"
+        | "courses"
+        | "service_categories"
+        | "engagement_tiers"
+        | "process_steps"
+        | "team_members"
+        | "timeline_entries"
+        | "open_roles"
+        | "faqs";
       /** Fixed column values for this list (e.g. testimonials placement). */
       scope?: Record<string, string>;
+      /** Extra ordering columns computed on save (FAQ topic / homepage order). */
+      derive?: "faq";
       title?: string;
       list: Extract<Field, { type: "list" }>;
     }
@@ -601,7 +617,17 @@ export const settingsEditors: Editor[] = [
   },
 ];
 
-const registry = new Map([...homepageEditors, ...settingsEditors].map((e) => [e.id, e]));
+const allEditors = [
+  ...homepageEditors,
+  ...settingsEditors,
+  ...academyEditors,
+  ...servicesEditors,
+  ...aboutEditors,
+  ...careersEditors,
+  ...faqEditors,
+];
+const registry = new Map(allEditors.map((e) => [e.id, e]));
+if (registry.size !== allEditors.length) throw new Error("Duplicate editor id in lib/content/editors");
 
 export function getEditorPart(editorId: string, partIndex: number): Part | undefined {
   return registry.get(editorId)?.parts[partIndex];
