@@ -1,7 +1,8 @@
 "use client";
 
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-import { ChevronDown, LoaderCircle, LogOut } from "lucide-react";
+import { ChevronDown, LoaderCircle, LogOut, UserRound } from "lucide-react";
+import Link from "next/link";
 import { useTransition } from "react";
 
 import { signOut } from "@/app/login/actions";
@@ -43,6 +44,15 @@ export function UserMenu({ admin }: { admin: AdminUser }) {
             <p className="eyebrow mt-2 !text-[0.6rem]">{admin.role}</p>
           </div>
           <DropdownMenu.Separator className="my-1 h-px bg-border/70" />
+          <DropdownMenu.Item asChild>
+            <Link
+              href="/account"
+              className="flex w-full cursor-pointer items-center gap-2 rounded-xl px-3 py-2 text-sm text-foreground/80 outline-none data-[highlighted]:bg-secondary data-[highlighted]:text-foreground"
+            >
+              <UserRound className="size-4" />
+              Your account
+            </Link>
+          </DropdownMenu.Item>
           {/* Called directly: a <form> inside the menu is unmounted before it can submit. */}
           <DropdownMenu.Item
             onSelect={() => startSignOut(() => signOut())}

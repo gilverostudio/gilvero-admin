@@ -318,7 +318,7 @@ export const componentCopy: { key: string; page: string; label: string; data: Re
       secondary: { label: "View Courses", href: "/academy" },
     },
   },
-  { key: "home.services", page: "home", label: "Services overview", data: { linkLabel: "All Services" } },
+  { key: "home.services", page: "home", label: "Services overview", data: { linkLabel: "All Services", cardLinkLabel: "Explore" } },
   { key: "home.featured", page: "home", label: "Recent commissions", data: { linkLabel: "Full Portfolio" } },
   { key: "home.store", page: "home", label: "Print atelier preview", data: { linkLabel: "Shop Prints" } },
   {
@@ -396,7 +396,7 @@ export const componentCopy: { key: string; page: string; label: string; data: Re
     key: "portfolio.detail",
     page: "portfolio",
     label: "Case study headings",
-    data: { galleryTitle: "Gallery", moreTitle: "More work", allLabel: "All projects" },
+    data: { galleryTitle: "Gallery", moreTitle: "More work", allLabel: "All projects", backLabel: "Portfolio" },
   },
   {
     key: "services.headings",

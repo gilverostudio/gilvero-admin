@@ -167,6 +167,23 @@ study, course and article pages have **templates** with placeholders like `{titl
 - **Client Area:** sign-in panel, features
 - **Privacy / Terms:** the full legal text, as sections with paragraphs and bullet points
 
+### Accounts & team
+- **Your account** (user menu): change your display name and password. Changing your password
+  asks for the current one.
+- **Forgot password** (login page): emails a one-time reset link that opens the account page to
+  choose a new password. Two settings in Supabase are needed for this:
+  1. **Authentication → URL Configuration → Redirect URLs:** add
+     `https://portal.gilvero.com/auth/confirm` (and `http://localhost:3001/auth/confirm` for local
+     work).
+  2. **Authentication → Emails → SMTP:** use Resend (host `smtp.resend.com`, port 465, user
+     `resend`, your API key as the password, sender e.g. `admin@gilvero.com`). Supabase's
+     built-in email only reaches the project's own team members and is heavily rate-limited.
+- **Admin team** (Settings, owners only): add people (a one-time password is shown to share
+  privately), switch between owner and editor, reset someone's password, or remove them. The team
+  always keeps at least one owner. This needs `SUPABASE_SERVICE_ROLE_KEY` in the portal's
+  **server** environment on Netlify. It's never exposed to the browser, and without it
+  `npm run admin:create` still works.
+
 ### How the editors work
 Every Homepage and Settings form comes from declarative field definitions in
 `src/lib/content/editors.ts`. The same definitions render the form
@@ -193,9 +210,10 @@ an hour.
 Without the Supabase variables the website falls back to the built-in content in `src/content`
 and the forms show a "not available" message. It never shows a broken page.
 
-**Admin hosting (optional, e.g. `admin.gilvero.com`):** add `NEXT_PUBLIC_SUPABASE_URL`,
-`NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_WEBSITE_URL` and `WEBSITE_REVALIDATE_SECRET`, and
-use Node 22+.
+**Admin (portal.gilvero.com):** set `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
+`NEXT_PUBLIC_WEBSITE_URL` (`https://gilvero.com`), `WEBSITE_REVALIDATE_SECRET` and `NODE_VERSION=22`.
+Optionally set `SUPABASE_SERVICE_ROLE_KEY` to manage the admin team from Settings.
+`NEXT_PUBLIC_*` values are built into the app, so redeploy after changing them.
 
 ### Deploys and Netlify's contributor limit
 

@@ -143,7 +143,20 @@ export const pagesEditors: Editor[] = [
     id: "page-portfolio-detail",
     title: "Case study pages",
     description: "Template for every /portfolio/… page.",
-    parts: [pagePart("portfolio-detail", { cta: true, placeholders: "{title}, {category}, {client}, {story}" })],
+    parts: [
+      pagePart("portfolio-detail", { cta: true, placeholders: "{title}, {category}, {client}, {story}" }),
+      {
+        kind: "section",
+        key: "portfolio.detail",
+        title: "Labels",
+        fields: [
+          { type: "text", name: "backLabel", label: "Back link", placeholder: "Portfolio", max: 40 },
+          { type: "text", name: "galleryTitle", label: "Gallery heading", placeholder: "Gallery", max: 60 },
+          { type: "text", name: "moreTitle", label: "More work heading", placeholder: "More work", max: 60 },
+          { type: "text", name: "allLabel", label: "All projects button", placeholder: "All projects", max: 40 },
+        ],
+      },
+    ],
   },
   { id: "page-academy", title: "Academy", description: "/academy", preview: "/academy", parts: [pagePart("academy", { header: "full", actions: true, cta: true })] },
   {

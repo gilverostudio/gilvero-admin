@@ -153,6 +153,7 @@ export const homepageEditors: Editor[] = [
           title,
           copy,
           { type: "text", name: "linkLabel", label: "Button label", placeholder: "All Services", max: 40 },
+          { type: "text", name: "cardLinkLabel", label: "Card link label", placeholder: "Explore", max: 30 },
           {
             type: "list",
             name: "cards",

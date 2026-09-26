@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { isBuilt, moduleGroups } from "@/lib/modules";
+import { moduleGroups } from "@/lib/modules";
 import { cn } from "@/lib/utils";
 
 type SidebarNavProps = {
@@ -12,7 +12,7 @@ type SidebarNavProps = {
   badges?: Record<string, number>;
 };
 
-/** Grouped module navigation. Modules not built yet show the phase they ship in. */
+/** Grouped module navigation with optional count badges (e.g. new inbox items). */
 export function SidebarNav({ onNavigate, badges = {} }: SidebarNavProps) {
   const pathname = usePathname();
 
@@ -48,11 +48,6 @@ export function SidebarNav({ onNavigate, badges = {} }: SidebarNavProps) {
                     {badges[module.slug] ? (
                       <span className="min-w-5 rounded-full bg-primary px-1.5 text-center text-[0.65rem] font-semibold text-primary-foreground">
                         {badges[module.slug]}
-                      </span>
-                    ) : null}
-                    {!isBuilt(module) ? (
-                      <span className="rounded-full border border-border/80 px-1.5 py-px text-[0.6rem] tracking-wider text-muted-foreground/70">
-                        P{module.phase}
                       </span>
                     ) : null}
                   </Link>

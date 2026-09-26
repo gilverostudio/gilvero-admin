@@ -304,6 +304,7 @@ async function main() {
   await db.exec(`insert into admin_users (id, email, role) values ('${admin}', 'a@x.com', 'owner')`);
 
   await asRole("authenticated", stranger, async () => {
+    check("non-admin cannot use set_my_name", await fails(`select set_my_name('Hacker')`));
     check(
       "signed-in non-admin cannot write content",
       await fails(`insert into faqs (topic, question, answer) values ('x','y','z')`),
@@ -319,6 +320,9 @@ async function main() {
     );
     const { count } = (await one<{ count: number }>(`select count(*)::int as count from projects`))!;
     check("admin sees drafts", count === 6);
+    await db.query(`select set_my_name('Studio Owner')`);
+    const me = await one<{ full_name: string; role: string }>(`select full_name, role from admin_users where id = '${admin}'`);
+    check("admin can rename themselves (role untouched)", me?.full_name === "Studio Owner" && me?.role === "owner");
     const subs = (await one<{ count: number }>(`select count(*)::int as count from submissions`))!;
     check("admin reads the inbox (seeded + visitor submissions)", subs.count === 5, `saw ${subs.count}`);
   });

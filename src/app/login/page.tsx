@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { getAdmin } from "@/lib/auth";
@@ -10,6 +11,7 @@ export const metadata: Metadata = { title: "Sign in" };
 
 const ERRORS: Record<string, string> = {
   "no-access": "This account doesn't have admin access.",
+  "link-expired": "That reset link has expired or was already used. Request a new one below.",
 };
 
 export default async function LoginPage({ searchParams }: PageProps<"/login">) {
@@ -62,8 +64,10 @@ export default async function LoginPage({ searchParams }: PageProps<"/login">) {
             <LoginForm next={next} initialError={ERRORS[errorKey] ?? null} />
           </div>
 
-          <p className="mt-8 text-center text-xs text-muted-foreground/70">
-            Trouble signing in? Ask the studio owner to reset your access.
+          <p className="mt-8 text-center text-xs text-muted-foreground">
+            <Link href="/login/forgot" className="text-primary hover:underline">
+              Forgot your password?
+            </Link>
           </p>
         </div>
       </section>
