@@ -131,6 +131,26 @@ All five are form-engine pages (see below):
 - **FAQ:** one sortable list. Questions are grouped by their topic on the FAQ page, and ticked
   questions also appear on the homepage, in the same order.
 
+### Inbox (`/inbox`)
+Every website form (booking requests, enquiries, academy applications and newsletter sign-ups)
+lands here. You can filter by type and status, search, reply by email, call or WhatsApp, set a
+status (new, in progress, done, spam), keep internal notes, export a CSV and delete. Booking
+reference images are kept in a **private** `submissions` bucket and shown through 30-minute
+signed links. The sidebar shows how many items are new.
+
+Visitors can't read or write the `submissions` table. The website calls the `submit_form()`
+database function, which validates the data and rate-limits submissions (3 per address per form
+every 10 minutes, and 30 per minute across the site). Newsletter sign-ups are de-duplicated. A
+hidden honeypot field silently drops bot posts.
+
+**Email alerts (optional):** set these on the website's hosting to get an email for each booking,
+enquiry and academy application. Replying to the email answers the visitor directly.
+- `RESEND_API_KEY` from [resend.com](https://resend.com)
+- `NOTIFY_EMAIL`: the recipient. Defaults to the studio email in Settings.
+- `NOTIFY_FROM`: the sender, on a domain you've verified in Resend, e.g.
+  `Gilvero Website <hello@gilvero.com>`. Without it, Resend's test sender only delivers to your
+  own Resend account address.
+
 ### How the editors work
 Every Homepage and Settings form comes from declarative field definitions in
 `src/lib/content/editors.ts`. The same definitions render the form
@@ -166,5 +186,5 @@ status, and visitors only ever see published rows.
 | 1 | Media library + portfolio editor; website portfolio reads from Supabase | ✅ |
 | 2 | Homepage sections + site settings + menus | ✅ |
 | 3 | Journal, academy, services, about, careers, FAQ | ✅ |
-| 4 | Inbox: website forms → Supabase + email alerts | |
+| 4 | Inbox: website forms → Supabase + email alerts | ✅ |
 | 5 | Print store, page headers/SEO, legal pages | |

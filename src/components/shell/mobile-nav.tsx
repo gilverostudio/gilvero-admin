@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { SidebarNav } from "./sidebar-nav";
 
 /** Slide-in navigation for small screens. */
-export function MobileNav() {
+export function MobileNav({ badges }: { badges?: Record<string, number> }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -32,7 +32,7 @@ export function MobileNav() {
           </div>
           <Dialog.Description className="sr-only">Admin navigation</Dialog.Description>
           <div className="mt-8 -mr-3 flex-1 overflow-y-auto pr-3 pl-3">
-            <SidebarNav onNavigate={() => setOpen(false)} />
+            <SidebarNav onNavigate={() => setOpen(false)} badges={badges} />
           </div>
         </Dialog.Content>
       </Dialog.Portal>

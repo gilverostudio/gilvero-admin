@@ -6,10 +6,14 @@ import { usePathname } from "next/navigation";
 import { isBuilt, moduleGroups } from "@/lib/modules";
 import { cn } from "@/lib/utils";
 
-type SidebarNavProps = { onNavigate?: () => void };
+type SidebarNavProps = {
+  onNavigate?: () => void;
+  /** Counts shown next to a module, keyed by slug (e.g. new inbox items). */
+  badges?: Record<string, number>;
+};
 
 /** Grouped module navigation. Modules not built yet show the phase they ship in. */
-export function SidebarNav({ onNavigate }: SidebarNavProps) {
+export function SidebarNav({ onNavigate, badges = {} }: SidebarNavProps) {
   const pathname = usePathname();
 
   return (
@@ -41,6 +45,11 @@ export function SidebarNav({ onNavigate }: SidebarNavProps) {
                     ) : null}
                     <Icon className={cn("size-4 shrink-0", active ? "text-primary" : "text-muted-foreground group-hover:text-foreground")} />
                     <span className="flex-1 truncate">{module.label}</span>
+                    {badges[module.slug] ? (
+                      <span className="min-w-5 rounded-full bg-primary px-1.5 text-center text-[0.65rem] font-semibold text-primary-foreground">
+                        {badges[module.slug]}
+                      </span>
+                    ) : null}
                     {!isBuilt(module) ? (
                       <span className="rounded-full border border-border/80 px-1.5 py-px text-[0.6rem] tracking-wider text-muted-foreground/70">
                         P{module.phase}

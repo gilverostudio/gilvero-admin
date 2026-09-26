@@ -272,6 +272,32 @@ async function main() {
     check("visitor updates affect 0 rows", upd.affectedRows === 0);
   });
 
+  console.log("\n5. Website forms (submit_form)");
+  await asRole("anon", null, async () => {
+    const call = (kind: string, email: string, data: object = { message: "hi" }) =>
+      db.query<{ id: string }>(`select submit_form($1::submission_kind, 'Visitor', $2, '0300', $3::jsonb) as id`, [
+        kind,
+        email,
+        JSON.stringify(data),
+      ]);
+    const first = await call("contact", "Visitor@Example.com").then((r) => r.rows[0].id, () => null);
+    check("visitor can submit a form", Boolean(first));
+    const { count: visible } = (await one<{ count: number }>(`select count(*)::int as count from submissions`))!;
+    check("visitor still cannot read the inbox", visible === 0);
+    await call("contact", "visitor@example.com");
+    await call("contact", "visitor@example.com");
+    check("4th submission from one address in 10 min is refused", await fails(`select submit_form('contact', 'V', 'visitor@example.com', '', '{}'::jsonb)`));
+    check("invalid email is refused", await fails(`select submit_form('contact', 'V', 'not-an-email', '', '{}'::jsonb)`));
+    check("non-object payload is refused", await fails(`select submit_form('contact', 'V', 'a@b.co', '', '[1]'::jsonb)`));
+    check("unknown form kind is refused", await fails(`select submit_form('hack', 'V', 'a@b.co', '', '{}'::jsonb)`));
+    const n1 = (await call("newsletter", "reader@example.com", {})).rows[0].id;
+    const n2 = (await call("newsletter", "READER@example.com", {})).rows[0].id;
+    check("newsletter sign-up is de-duplicated", n1 === n2);
+    check("visitor cannot insert into submissions directly", await fails(`insert into submissions (kind, email) values ('contact', 'x@y.z')`));
+  });
+  const stored = await one<{ email: string; name: string }>(`select email, name from submissions where kind = 'contact' and name = 'Visitor' limit 1`);
+  check("email is stored lower-cased", stored?.email === "visitor@example.com");
+
   const stranger = "00000000-0000-0000-0000-000000000001";
   const admin = "00000000-0000-0000-0000-000000000002";
   await db.exec(`insert into auth.users (id, email) values ('${stranger}', 's@x.com'), ('${admin}', 'a@x.com')`);
@@ -294,7 +320,7 @@ async function main() {
     const { count } = (await one<{ count: number }>(`select count(*)::int as count from projects`))!;
     check("admin sees drafts", count === 6);
     const subs = (await one<{ count: number }>(`select count(*)::int as count from submissions`))!;
-    check("admin reads the inbox", subs.count === 1);
+    check("admin reads the inbox (seeded + visitor submissions)", subs.count === 5, `saw ${subs.count}`);
   });
 
   console.log(failures ? `\n✗ ${failures} check(s) failed\n` : "\n✓ All checks passed\n");
