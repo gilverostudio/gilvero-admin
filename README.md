@@ -197,6 +197,28 @@ and the forms show a "not available" message. It never shows a broken page.
 `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_WEBSITE_URL` and `WEBSITE_REVALIDATE_SECRET`, and
 use Node 22+.
 
+### Commits and Netlify's contributor limit
+
+Netlify's free plan only lets **one Git contributor**, the account owner `gilverostudio`, trigger
+deploys from a **private** repo. Commits by anyone else are blocked. So commits are authored as
+`gilverostudio <gilverostudio@gmail.com>`, and a local `commit-msg` hook credits the developer:
+
+```
+Co-authored-by: sheryar-ahmed <royalsheryar505@gmail.com>
+```
+
+Setup on a fresh clone:
+
+```bash
+git config user.name "gilverostudio"
+git config user.email "gilverostudio@gmail.com"
+printf '#!/bin/sh
+T="Co-authored-by: sheryar-ahmed <royalsheryar505@gmail.com>"
+grep -qiF "$T" "$1" || git interpret-trailers --in-place --trailer "$T" "$1"
+' > .git/hooks/commit-msg
+chmod +x .git/hooks/commit-msg
+```
+
 ## Data model (overview)
 
 - **Collections:** `projects` (+ `project_images`, `portfolio_categories`), `posts`
