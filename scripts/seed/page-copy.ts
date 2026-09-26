@@ -418,7 +418,29 @@ export const componentCopy: { key: string; page: string; label: string; data: Re
     key: "store.configurator",
     page: "store",
     label: "Configurator labels",
-    data: { size: "Size", paper: "Paper", frame: "Frame" },
+    data: { size: "Size", paper: "Paper", frame: "Frame", checkoutLabel: "Checkout" },
+  },
+  { key: "store.products", page: "store", label: "Products heading", data: { addToBasketLabel: "Add to Basket" } },
+  {
+    key: "store.tracking",
+    page: "store",
+    label: "Order tracking",
+    data: { note: "Existing customers can track live status inside the", noteLinkLabel: "Client Area" },
+  },
+  { key: "booking.form", page: "booking", label: "Booking form", data: { name: { label: "Name" } } },
+  {
+    key: "academy.detail",
+    page: "academy",
+    label: "Course page copy",
+    data: {
+      applyFields: {
+        name: "Full name",
+        phone: "Phone",
+        email: "Email",
+        message: "Anything we should know?",
+        submit: "Submit Application",
+      },
+    },
   },
 ];
 

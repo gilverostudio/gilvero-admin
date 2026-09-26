@@ -97,6 +97,35 @@ export async function savePart(editorId: string, partIndex: number, value: unkno
       break;
     }
 
+    case "page": {
+      const { data: existing } = await supabase.from("pages").select("header").eq("slug", part.slug).maybeSingle();
+      const patch: Row = {
+        seo_title: (data.seo_title as string) || null,
+        seo_description: (data.seo_description as string) || null,
+      };
+      // Keep header keys this editor doesn't manage; only touch groups it defines.
+      if ("header" in data) patch.header = { ...((existing?.header as Row) ?? {}), ...(data.header as Row) };
+      if ("cta" in data) patch.cta = data.cta;
+      const { error } = await supabase.from("pages").update(patch).eq("slug", part.slug);
+      if (error) return fail(friendlyError(error));
+      break;
+    }
+
+    case "legal": {
+      const sections = (data.sections as Row[]).map((section) => {
+        const bullets = section.bullets as string[];
+        const { bullets: _drop, ...rest } = section;
+        void _drop;
+        return bullets.length ? { ...rest, bullets } : rest;
+      });
+      const { error } = await supabase
+        .from("legal_pages")
+        .update({ ...data, sections })
+        .eq("slug", part.slug);
+      if (error) return fail(friendlyError(error));
+      break;
+    }
+
     case "settings": {
       // jsonb groups (social, seo) are merged so unmanaged keys survive.
       const groups = part.fields.filter((f) => f.type === "group").map((f) => f.name);

@@ -151,6 +151,22 @@ enquiry and academy application. Replying to the email answers the visitor direc
   `Gilvero Website <hello@gilvero.com>`. Without it, Resend's test sender only delivers to your
   own Resend account address.
 
+### Print Store (`/store`)
+Products (name, price, note, image, show/hide), the configurator's sizes (one can be the default
+selection), papers and frames, plus the headings, labels, tracking steps and messages in the order
+section. Ordering is still presentational: buttons show a message, and there's no checkout or
+payment yet.
+
+### Pages & SEO (`/pages`)
+One editor per page, in site order. Each has a Google title and description, the page header
+(eyebrow, heading, intro, breadcrumb, background image, buttons) and the closing banner. The case
+study, course and article pages have **templates** with placeholders like `{title}` and
+`{category}`; an item's own SEO text overrides its template. Page-specific text also lives here:
+- **Booking:** form labels, dropdown options, next steps
+- **Contact:** form labels, contact cards, gallery, map
+- **Client Area:** sign-in panel, features
+- **Privacy / Terms:** the full legal text, as sections with paragraphs and bullet points
+
 ### How the editors work
 Every Homepage and Settings form comes from declarative field definitions in
 `src/lib/content/editors.ts`. The same definitions render the form
@@ -162,6 +178,24 @@ an editor means adding a definition, not writing a new form.
 Every save calls the website's `/api/revalidate` (`portfolio` tag for the portfolio, `site` for
 everything else), so the change is live on the next page load. If that call fails, the save still succeeds and the site catches up within
 an hour.
+
+## Going live checklist
+
+**Website (Netlify → Site configuration → Environment variables), then redeploy:**
+
+| Variable | Needed for |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | All content, and saving forms |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | All content, and saving forms |
+| `REVALIDATE_SECRET` | Admin saves updating the live site immediately (same value as the admin's `WEBSITE_REVALIDATE_SECRET`) |
+| `RESEND_API_KEY`, `NOTIFY_FROM`, `NOTIFY_EMAIL` | Optional email alert for each new enquiry |
+
+Without the Supabase variables the website falls back to the built-in content in `src/content`
+and the forms show a "not available" message. It never shows a broken page.
+
+**Admin hosting (optional, e.g. `admin.gilvero.com`):** add `NEXT_PUBLIC_SUPABASE_URL`,
+`NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_WEBSITE_URL` and `WEBSITE_REVALIDATE_SECRET`, and
+use Node 22+.
 
 ## Data model (overview)
 
@@ -187,4 +221,4 @@ status, and visitors only ever see published rows.
 | 2 | Homepage sections + site settings + menus | ✅ |
 | 3 | Journal, academy, services, about, careers, FAQ | ✅ |
 | 4 | Inbox: website forms → Supabase + email alerts | ✅ |
-| 5 | Print store, page headers/SEO, legal pages | |
+| 5 | Print store, page headers/SEO, legal pages | ✅ |

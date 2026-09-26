@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 
 /** Editors up to and including this phase are built. */
-export const BUILT_PHASE = 4;
+export const BUILT_PHASE = 5;
 
 export const isBuilt = (module: Pick<AdminModule, "phase">) => module.phase <= BUILT_PHASE;
 

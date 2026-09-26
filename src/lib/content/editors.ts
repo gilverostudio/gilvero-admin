@@ -1,4 +1,5 @@
 import { aboutEditors, academyEditors, careersEditors, faqEditors, servicesEditors } from "./editors-pages";
+import { pagesEditors, storeEditors } from "./editors-site";
 import type { Field } from "./schema";
 
 /**
@@ -22,7 +23,9 @@ export type Part =
         | "team_members"
         | "timeline_entries"
         | "open_roles"
-        | "faqs";
+        | "faqs"
+        | "store_products"
+        | "print_options";
       /** Fixed column values for this list (e.g. testimonials placement). */
       scope?: Record<string, string>;
       /** Extra ordering columns computed on save (FAQ topic / homepage order). */
@@ -31,6 +34,10 @@ export type Part =
       list: Extract<Field, { type: "list" }>;
     }
   | { kind: "pageCta"; slug: string; title?: string; fields: Field[] }
+  /** A row of `pages`: seo_title, seo_description, header, cta. */
+  | { kind: "page"; slug: string; title?: string; fields: Field[] }
+  /** A row of `legal_pages`. */
+  | { kind: "legal"; slug: "privacy" | "terms"; title?: string; fields: Field[] }
   | { kind: "settings"; title?: string; fields: Field[] }
   | { kind: "navigation"; key: string; title?: string; fields: Field[]; /** data is an array stored under this field */ arrayField?: string };
 
@@ -625,6 +632,8 @@ const allEditors = [
   ...aboutEditors,
   ...careersEditors,
   ...faqEditors,
+  ...pagesEditors,
+  ...storeEditors,
 ];
 const registry = new Map(allEditors.map((e) => [e.id, e]));
 if (registry.size !== allEditors.length) throw new Error("Duplicate editor id in lib/content/editors");

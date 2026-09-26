@@ -37,6 +37,22 @@ export async function loadPart(part: Part): Promise<PartValue> {
       const { data } = await supabase.from("pages").select("cta").eq("slug", part.slug).maybeSingle();
       return normalize(fields, data?.cta as PartValue);
     }
+    case "page": {
+      const { data } = await supabase
+        .from("pages")
+        .select("seo_title, seo_description, header, cta")
+        .eq("slug", part.slug)
+        .maybeSingle();
+      return normalize(fields, data as PartValue);
+    }
+    case "legal": {
+      const { data } = await supabase
+        .from("legal_pages")
+        .select("eyebrow, title, crumb, updated, intro, sections")
+        .eq("slug", part.slug)
+        .maybeSingle();
+      return normalize(fields, data as PartValue);
+    }
     case "settings": {
       const { data } = await supabase
         .from("site_settings")
