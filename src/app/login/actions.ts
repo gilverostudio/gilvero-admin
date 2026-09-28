@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
+import { canSendResetEmail, portalOrigin, sendResetEmail } from "@/lib/reset-email";
 import { createClient } from "@/lib/supabase/server";
 
 export type SignInState = { error: string | null; email: string };
@@ -45,10 +46,16 @@ export async function requestPasswordReset(_prev: ResetState, formData: FormData
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return { sent: false, error: "Enter the email you sign in with." };
 
   const h = await headers();
-  const host = h.get("x-forwarded-host") ?? h.get("host");
-  const proto = h.get("x-forwarded-proto") ?? (host?.startsWith("localhost") ? "http" : "https");
+  const origin = portalOrigin(h.get("x-forwarded-host") ?? h.get("host"));
+
+  if (canSendResetEmail()) {
+    await sendResetEmail(email, origin);
+    return { sent: true, error: null };
+  }
+
+  // Fallback: Supabase's mailer (needs the portal in Supabase's redirect URLs).
   const supabase = await createClient();
-  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${proto}://${host}/auth/confirm` });
+  const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: `${origin}/auth/confirm` });
   if (error?.status === 429) return { sent: false, error: "Too many requests — please wait a few minutes and try again." };
   if (error) console.error("[reset] resetPasswordForEmail failed", error.message);
   return { sent: true, error: null };
