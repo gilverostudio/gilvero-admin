@@ -24,19 +24,41 @@ export async function revalidateWebsite(tags: string[]) {
   }
 }
 
-/** Health check used on the dashboard: is the website reachable and is the secret accepted? */
-export async function checkWebsiteLink(): Promise<"connected" | "unauthorised" | "unreachable" | "not-configured"> {
-  const secret = env.revalidateSecret();
-  if (!secret) return "not-configured";
+export type WebsiteLink = "connected" | "no-cms" | "site-missing-secret" | "unauthorised" | "unreachable" | "not-configured";
+
+/** The website's secret-free /api/status report (older builds don't have it). */
+async function websiteStatus() {
   try {
-    const res = await fetch(`${env.websiteUrl()}/api/revalidate`, {
-      headers: { authorization: `Bearer ${secret}` },
-      cache: "no-store",
-      signal: AbortSignal.timeout(4000),
-    });
-    if (res.status === 401) return "unauthorised";
-    return res.ok ? "connected" : "unreachable";
+    const res = await fetch(`${env.websiteUrl()}/api/status`, { cache: "no-store", signal: AbortSignal.timeout(4000) });
+    if (!res.ok) return null;
+    return (await res.json()) as { cms?: boolean; revalidate?: boolean };
   } catch {
-    return "unreachable";
+    return null;
   }
+}
+
+/**
+ * Health check used on the dashboard: is the website reading the CMS, is it
+ * reachable, and does it accept our secret?
+ */
+export async function checkWebsiteLink(): Promise<WebsiteLink> {
+  const secret = env.revalidateSecret();
+  const [status, auth] = await Promise.all([
+    websiteStatus(),
+    secret
+      ? fetch(`${env.websiteUrl()}/api/revalidate`, {
+          headers: { authorization: `Bearer ${secret}` },
+          cache: "no-store",
+          signal: AbortSignal.timeout(4000),
+        }).then(
+          (res) => res.status,
+          () => 0,
+        )
+      : Promise.resolve(null),
+  ]);
+
+  if (status?.cms === false) return "no-cms";
+  if (auth === null) return "not-configured";
+  if (auth === 401) return status?.revalidate === false ? "site-missing-secret" : "unauthorised";
+  return auth >= 200 && auth < 300 ? "connected" : "unreachable";
 }

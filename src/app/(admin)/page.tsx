@@ -19,7 +19,7 @@ import { requireAdmin } from "@/lib/auth";
 import { countRows } from "@/lib/counts";
 import { env } from "@/lib/env";
 import { allModules } from "@/lib/modules";
-import { checkWebsiteLink } from "@/lib/revalidate";
+import { checkWebsiteLink, type WebsiteLink } from "@/lib/revalidate";
 import { createClient } from "@/lib/supabase/server";
 import { cn } from "@/lib/utils";
 
@@ -39,8 +39,18 @@ const QUICK_ACTIONS = [
   { href: "/homepage", label: "Edit the homepage", icon: House },
 ];
 
-const LINK_STATUS = {
+const LINK_STATUS: Record<WebsiteLink, { icon: typeof CircleCheck; tone: string; text: string }> = {
   connected: { icon: CircleCheck, tone: "text-emerald-400", text: "Connected — saves refresh the live site instantly." },
+  "no-cms": {
+    icon: CircleX,
+    tone: "text-destructive",
+    text: "The website isn't reading from the CMS, so edits won't appear. Add NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY to the website's Netlify environment (Production, Builds + Functions scopes) and redeploy.",
+  },
+  "site-missing-secret": {
+    icon: CircleX,
+    tone: "text-destructive",
+    text: "The website has no REVALIDATE_SECRET. Add it in the website's Netlify environment (same value as WEBSITE_REVALIDATE_SECRET here) and redeploy.",
+  },
   unauthorised: {
     icon: CircleX,
     tone: "text-destructive",
@@ -56,7 +66,7 @@ const LINK_STATUS = {
     tone: "text-muted-foreground",
     text: "Set WEBSITE_REVALIDATE_SECRET to publish changes instantly (otherwise the site catches up within an hour).",
   },
-} as const;
+};
 
 const KIND_LABEL: Record<string, string> = {
   booking: "Booking request",
