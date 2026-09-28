@@ -321,8 +321,8 @@ export function ProjectForm({ id, initial, categories, serviceSuggestions, websi
               <Textarea id="seo_description" value={values.seo_description} onChange={(e) => set("seo_description", e.target.value)} rows={3} maxLength={300} />
             </Field>
             <div className="rounded-xl border border-border/60 bg-background/50 p-3.5">
-              <p className="truncate text-xs text-emerald-400/80">gilvero.com › portfolio › {values.slug || "…"}</p>
-              <p className="mt-1 line-clamp-1 text-sm text-[oklch(78%_0.1_250)]">
+              <p className="truncate text-xs text-emerald-400/80 light:text-emerald-700">gilvero.com › portfolio › {values.slug || "…"}</p>
+              <p className="mt-1 line-clamp-1 text-sm text-[oklch(78%_0.1_250)] light:text-[oklch(45%_0.15_260)]">
                 {values.seo_title || `${values.title || "Title"} — ${categoryName} Case Study | Gilvero`}
               </p>
               <p className="mt-1 line-clamp-2 text-xs text-muted-foreground">{values.seo_description || values.story || "Description…"}</p>

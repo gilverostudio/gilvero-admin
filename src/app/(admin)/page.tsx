@@ -40,7 +40,7 @@ const QUICK_ACTIONS = [
 ];
 
 const LINK_STATUS: Record<WebsiteLink, { icon: typeof CircleCheck; tone: string; text: string }> = {
-  connected: { icon: CircleCheck, tone: "text-emerald-400", text: "Connected — saves refresh the live site instantly." },
+  connected: { icon: CircleCheck, tone: "text-emerald-400 light:text-emerald-600", text: "Connected — saves refresh the live site instantly." },
   "no-cms": {
     icon: CircleX,
     tone: "text-destructive",

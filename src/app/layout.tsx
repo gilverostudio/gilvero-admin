@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Manrope, Sora } from "next/font/google";
-import { Toaster } from "sonner";
+
+import { ThemedToaster } from "@/components/theme/themed-toaster";
+import { THEME_SCRIPT } from "@/lib/theme";
 
 import "./globals.css";
 
@@ -24,10 +26,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${sora.variable} ${manrope.variable} h-full antialiased`}>
+    // data-theme is set by THEME_SCRIPT before hydration, hence suppressHydrationWarning.
+    <html lang="en" suppressHydrationWarning className={`${sora.variable} ${manrope.variable} h-full antialiased`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body className="min-h-full">
         {children}
-        <Toaster theme="dark" position="bottom-right" />
+        <ThemedToaster />
       </body>
     </html>
   );

@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { MobileNav } from "@/components/shell/mobile-nav";
 import { SidebarNav } from "@/components/shell/sidebar-nav";
 import { UserMenu } from "@/components/shell/user-menu";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { requireAdmin } from "@/lib/auth";
 import { env } from "@/lib/env";
@@ -42,6 +43,7 @@ export default async function AdminLayout({ children }: LayoutProps<"/">) {
                 <ArrowUpRight />
               </a>
             </Button>
+            <ThemeToggle />
             <UserMenu admin={admin} />
           </div>
         </header>

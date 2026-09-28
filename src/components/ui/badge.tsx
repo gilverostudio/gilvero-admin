@@ -10,7 +10,7 @@ const badgeVariants = cva(
       tone: {
         neutral: "border-border/80 text-muted-foreground",
         gold: "border-primary/40 bg-primary/10 text-primary",
-        success: "border-emerald-500/30 bg-emerald-500/10 text-emerald-300",
+        success: "border-emerald-500/30 bg-emerald-500/10 text-emerald-300 light:text-emerald-700",
         muted: "border-border/60 bg-secondary/60 text-muted-foreground",
       },
     },

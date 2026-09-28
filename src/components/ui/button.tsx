@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         /** Gold gradient — the primary call to action. */
-        gold: "bg-gradient-to-r from-[oklch(0.78_0.12_84)] to-[oklch(0.88_0.1_92)] text-primary-foreground shadow-[var(--shadow-glow)] hover:-translate-y-0.5 hover:brightness-110",
+        gold: "bg-gradient-to-r from-[oklch(0.78_0.12_84)] to-[oklch(0.88_0.1_92)] text-on-gold shadow-[var(--shadow-glow)] hover:-translate-y-0.5 hover:brightness-110",
         /** Hairline outline — the secondary action. */
         quiet:
           "border border-border/80 bg-transparent text-foreground/85 hover:border-primary/60 hover:text-primary",

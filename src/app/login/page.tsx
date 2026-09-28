@@ -24,7 +24,7 @@ export default async function LoginPage({ searchParams }: PageProps<"/login">) {
   return (
     <main className="grid min-h-svh lg:grid-cols-[1.15fr_1fr]">
       {/* Visual */}
-      <section className="relative hidden overflow-hidden lg:block">
+      <section data-theme="dark" className="relative hidden overflow-hidden lg:block">
         <Image
           src="/login.jpg"
           alt=""

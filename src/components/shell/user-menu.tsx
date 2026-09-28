@@ -24,7 +24,7 @@ export function UserMenu({ admin }: { admin: AdminUser }) {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className="group flex cursor-pointer items-center gap-2.5 rounded-full border border-border/70 py-1 pr-3 pl-1 transition-colors hover:border-primary/50 focus-visible:ring-1 focus-visible:ring-ring focus-visible:outline-none">
-        <span className="flex size-8 items-center justify-center rounded-full bg-gradient-to-br from-[oklch(0.78_0.12_84)] to-[oklch(0.88_0.1_92)] text-xs font-semibold text-primary-foreground">
+        <span className="flex size-8 items-center justify-center rounded-full bg-gradient-to-br from-[oklch(0.78_0.12_84)] to-[oklch(0.88_0.1_92)] text-xs font-semibold text-on-gold">
           {initials(admin)}
         </span>
         <span className="hidden max-w-[10rem] truncate text-sm text-foreground/80 sm:inline">

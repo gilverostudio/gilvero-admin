@@ -1,12 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* `light:` variant: styles that only apply in the light theme. */
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
 /* ------------------------------------------- */
 /* Design tokens — Gilvero dark luxury theme   */
 /* ------------------------------------------- */
 
-:root {
+:root,
+[data-theme="dark"] {
   --radius: 1rem;
+  color-scheme: dark;
 
   --ink: oklch(13% 0.004 285);
   --charcoal: oklch(19% 0.005 285);
@@ -35,6 +40,55 @@
 
   --ease-lux: cubic-bezier(0.16, 1, 0.3, 1);
   --shadow-glow: 0 0 60px -20px oklch(82% 0.13 85 / 0.35);
+
+  --on-gold: oklch(14% 0.01 80);
+  --gold-text: linear-gradient(100deg, oklch(72% 0.1 84), oklch(92% 0.11 92), oklch(70% 0.1 80));
+  --gold-wash: oklch(80% 0.12 86 / 0.08);
+}
+
+/* A photo panel marked data-theme="dark" keeps the dark palette inside the light theme. */
+[data-theme="dark"] {
+  color: var(--foreground);
+}
+
+/* ------------------------------------------- */
+/* Light theme — warm gallery paper, antique   */
+/* gold (matches gilvero.com). Set on <html    */
+/* data-theme="light"> before first paint.     */
+/* ------------------------------------------- */
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --ink: oklch(95.5% 0.008 85);
+  --charcoal: oklch(96.2% 0.009 85);
+  --gold: oklch(56% 0.115 76);
+  --gold-soft: oklch(70% 0.1 84);
+
+  --background: oklch(98.4% 0.006 85);
+  --foreground: oklch(19% 0.008 285);
+  --card: oklch(99.6% 0.003 85);
+  --card-foreground: oklch(19% 0.008 285);
+  --popover: oklch(99.6% 0.003 85);
+  --popover-foreground: oklch(19% 0.008 285);
+  --primary: oklch(56% 0.115 76);
+  --primary-foreground: oklch(99% 0.004 85);
+  --secondary: oklch(94.6% 0.008 85);
+  --secondary-foreground: oklch(19% 0.008 285);
+  --muted: oklch(95% 0.007 85);
+  --muted-foreground: oklch(46% 0.012 285);
+  --accent: oklch(93.5% 0.03 86);
+  --accent-foreground: oklch(38% 0.08 76);
+  --destructive: oklch(55% 0.21 25);
+  --destructive-foreground: oklch(98% 0.003 250);
+  --border: oklch(89.5% 0.01 85);
+  --input: oklch(86.5% 0.012 85);
+  --ring: oklch(56% 0.115 76);
+
+  --shadow-glow: 0 18px 50px -24px oklch(56% 0.11 76 / 0.45);
+
+  --gold-text: linear-gradient(100deg, oklch(50% 0.1 74), oklch(66% 0.13 84), oklch(48% 0.095 72));
+  --gold-wash: oklch(70% 0.12 84 / 0.1);
 }
 
 @theme inline {
@@ -62,6 +116,7 @@
   --color-charcoal: var(--charcoal);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-on-gold: var(--on-gold);
 
   --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
@@ -126,6 +181,9 @@
 
   body {
     background: var(--background);
+    transition:
+      background-color 0.4s var(--ease-lux),
+      color 0.4s var(--ease-lux);
     color: var(--foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -134,6 +192,13 @@
   ::selection {
     background: var(--gold);
     color: var(--ink);
+  }
+
+  /* Native select menus and pickers: readable on the theme's popover surface. */
+  select option,
+  select optgroup {
+    background-color: var(--popover);
+    color: var(--popover-foreground);
   }
 
   h1,
@@ -158,12 +223,7 @@
 /* Gold gradient headline text */
 @utility gold-text {
   color: transparent;
-  background: linear-gradient(
-    100deg,
-    oklch(72% 0.1 84),
-    oklch(92% 0.11 92),
-    oklch(70% 0.1 80)
-  );
+  background: var(--gold-text);
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -200,6 +260,6 @@
 /* Subtle radial gold wash for page backgrounds */
 @utility gold-wash {
   background-image:
-    radial-gradient(60rem 30rem at 85% -10%, oklch(80% 0.12 86 / 0.08), transparent 60%),
-    radial-gradient(40rem 24rem at -10% 110%, oklch(80% 0.12 86 / 0.05), transparent 60%);
+    radial-gradient(60rem 30rem at 85% -10%, var(--gold-wash), transparent 60%),
+    radial-gradient(40rem 24rem at -10% 110%, color-mix(in oklab, var(--gold-wash) 60%, transparent), transparent 60%);
 }
