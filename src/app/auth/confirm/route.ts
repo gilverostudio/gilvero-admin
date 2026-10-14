@@ -21,9 +21,7 @@ export async function GET(request: NextRequest) {
     ok = !(await supabase.auth.verifyOtp({ type: "recovery", token_hash: tokenHash })).error;
   }
 
-  const target = url.clone();
-  target.search = "";
-  target.pathname = ok ? "/account" : "/login";
-  if (!ok) target.searchParams.set("error", "link-expired");
+  // A fresh URL, so the one-time token never stays in the address bar or history.
+  const target = new URL(ok ? "/account" : "/login?error=link-expired", url.origin);
   return NextResponse.redirect(target);
 }
